@@ -1,0 +1,8 @@
+/Users/gadelshinrr/Desktop/courstick/WebApplication/WebApplication/obj/Debug/net6.0/WebApplication.csproj.AssemblyReference.cache
+/Users/gadelshinrr/Desktop/courstick/WebApplication/WebApplication/obj/Debug/net6.0/WebApplication.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gadelshinrr/Desktop/courstick/WebApplication/WebApplication/obj/Debug/net6.0/WebApplication.AssemblyInfoInputs.cache
+/Users/gadelshinrr/Desktop/courstick/WebApplication/WebApplication/obj/Debug/net6.0/WebApplication.AssemblyInfo.cs
+/Users/gadelshinrr/Desktop/courstick/WebApplication/WebApplication/obj/Debug/net6.0/WebApplication.csproj.CoreCompileInputs.cache
+/Users/gadelshinrr/Desktop/courstick/WebApplication/WebApplication/obj/Debug/net6.0/WebApplication.MvcApplicationPartsAssemblyInfo.cache
+/Users/gadelshinrr/Desktop/courstick/WebApplication/WebApplication/obj/Debug/net6.0/WebApplication.RazorAssemblyInfo.cache
+/Users/gadelshinrr/Desktop/courstick/WebApplication/WebApplication/obj/Debug/net6.0/WebApplication.RazorAssemblyInfo.cs

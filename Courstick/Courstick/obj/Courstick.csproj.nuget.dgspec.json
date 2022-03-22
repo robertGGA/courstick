@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tagir\\source\\repos\\Courstick\\Courstick\\Courstick.csproj": {}
+    "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tagir\\source\\repos\\Courstick\\Courstick\\Courstick.csproj": {
+    "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tagir\\source\\repos\\Courstick\\Courstick\\Courstick.csproj",
+        "projectUniqueName": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj",
         "projectName": "Courstick",
-        "projectPath": "C:\\Users\\tagir\\source\\repos\\Courstick\\Courstick\\Courstick.csproj",
+        "projectPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj",
         "packagesPath": "C:\\Users\\tagir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tagir\\source\\repos\\Courstick\\Courstick\\obj\\",
+        "outputPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tagir\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,38 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "EntityFramework6.Npgsql": {
+              "target": "Package",
+              "version": "[6.4.3, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.AspNetCore.Hosting.WindowsServices": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

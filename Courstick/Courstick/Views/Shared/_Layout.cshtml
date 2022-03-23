@@ -1,24 +1,27 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Courstick</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="css/homepageStyles.css"/>
-    <link rel="stylesheet" href="~/Courstick.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Courstick.styles.css" asp-append-version="true"/>
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 </head>
 <body>
+<div class="wr">
     <header>
         <div class="header_wrapper">
             <div class="half_of_header">
                 <a href="/" class="logo">
                     COURSTICK
-                    <img src="assets/logo.svg" class="logo-img"/>
+                    <img src="~/assets/logo.svg" class="logo-img"/>
                 </a>
                 <nav class="header_nav default_font_settings">
-                    <a class="nav_item" href="/">
+                    <a class="nav_item">
                         О нас
                     </a>
 
@@ -39,8 +42,8 @@
                 <button class="big-button orange-button default_font_settings">
                     Регистрация
                 </button>
-                <a class="reg-link" href="/">
-                    <img style="margin-right: 3px" src="assets/reg.svg" />
+                <a class="reg-link" asp-area="" asp-controller="Home" asp-action="Authorization">
+                    <img style="margin-right: 3px" src="~/assets/reg.svg"/>
                     Войти
                 </a>
             </div>
@@ -62,9 +65,11 @@
             </button>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

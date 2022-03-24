@@ -46,7 +46,7 @@
 .submit-form-button {
     margin-top: 32px;
     border: none;
-    padding: 12px 168px;
+    padding: 12px 0;
     border-radius: 8px;
 }
 
@@ -54,4 +54,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
+}
+
+.test {
+    background: black;
 }

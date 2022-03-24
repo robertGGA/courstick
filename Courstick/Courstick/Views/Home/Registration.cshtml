@@ -1,22 +1,23 @@
-@{
-    ViewData["Title"] = "Авторизация";
-}
 
+@{
+    ViewData["Title"] = "Регистрация";
+}
 <div class="main_block_gray">
     <div class="main_container">
         <div class="login-container-wrapper">
             <div class="login-container" >
-                <h2 class="title_login">Вход</h2>
+                <h2 class="title_login">Регистрация</h2>
                 <form class="login-form">
                     <input placeholder="Логин" class="input-form" type="text"/>
+                    <input placeholder="Почта" class="input-form" type="email"/>
                     <input placeholder="Пароль" class="input-form" type="password"/>
-                    <button class="submit-form-button orange-button" >
-                        Войти
+                    <input placeholder="Повторите пароль" class="input-form" type="password"/>
+                    <button class="submit-form-button orange-button">
+                        Зарегистрироваться
                     </button>
                 </form>
                 <div class="under-form-links">
-                    <a href="">Забыли пароль?</a>
-                    <a asp-area="" asp-controller="Home" asp-action="Registration">Регистрация</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Authorization">Уже есть аккаунт?</a>
                 </div>
                 
             </div>

@@ -29,7 +29,19 @@
 
                     <input placeholder="Поиск" class="input-search" type="search"/>
                 </div>
+                
+                <div class="courses-list">
+                    @Html.Partial("Partials/_Card", null)
+                    @Html.Partial("Partials/_Card", null)
+                    @Html.Partial("Partials/_Card", null)
+                    @Html.Partial("Partials/_Card", null)
+                    @Html.Partial("Partials/_Card", null)
+                    @Html.Partial("Partials/_Card", null)
+                </div>
             </div>
+            <button class="load-more-button">
+                Загрузить еще
+            </button>
         </div>
     </div>
 </div>

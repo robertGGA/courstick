@@ -50,3 +50,17 @@
 header {
     background: white;
 }
+
+.courses-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.load-more-button {
+    margin: 70px 0 50px 0;
+    border: none;
+    background: none;
+    color: #424551;
+}

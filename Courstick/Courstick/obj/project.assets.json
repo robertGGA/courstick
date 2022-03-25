@@ -2927,30 +2927,33 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.3",
       "Microsoft.AspNetCore.Hosting.WindowsServices >= 6.0.3",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.3",
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.3",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.3"
     ]
   },
   "packageFolders": {
-    "/Users/gadelshinrr/.nuget/packages/": {}
+    "C:\\Users\\tagir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/Courstick.csproj",
+      "projectUniqueName": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj",
       "projectName": "Courstick",
-      "projectPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/Courstick.csproj",
-      "packagesPath": "/Users/gadelshinrr/.nuget/packages/",
-      "outputPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/obj/",
+      "projectPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj",
+      "packagesPath": "C:\\Users\\tagir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/gadelshinrr/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\tagir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2989,6 +2992,12 @@
             "target": "Package",
             "version": "[6.0.3, )"
           },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.3, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.3, )"
@@ -3022,7 +3031,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

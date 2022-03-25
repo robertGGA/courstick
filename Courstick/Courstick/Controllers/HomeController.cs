@@ -18,11 +18,6 @@ namespace Courstick.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         public IActionResult Authorization()
         {
             return View();
@@ -34,6 +29,11 @@ namespace Courstick.Controllers
         }
 
         public IActionResult Profile()
+        {
+            return View();
+        }
+
+        public IActionResult Search()
         {
             return View();
         }

@@ -46,6 +46,13 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "LibSassBuilder/2.0.1": {
+        "type": "package",
+        "build": {
+          "build/LibSassBuilder.props": {},
+          "build/LibSassBuilder.targets": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.3": {
         "type": "package",
         "compile": {
@@ -1048,6 +1055,36 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "LibSassBuilder/2.0.1": {
+      "sha512": "f+7TWQtCirW94VdzKL9SaAfeSF96TeEqdtDztmTGbndrcUlZZlL6uJLZKQCXQgj1BB3OqX0584OCvqFHrkAusA==",
+      "type": "package",
+      "path": "libsassbuilder/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LibSassBuilder.csproj",
+        "build/DesignTime/LibSassBuilder.DesignTime.targets",
+        "build/DesignTime/Rules/ProjectItemsSchema.xaml",
+        "build/DesignTime/Rules/SassFileType.xaml",
+        "build/LibSassBuilder.props",
+        "build/LibSassBuilder.targets",
+        "libsassbuilder.2.0.1.nupkg.sha512",
+        "libsassbuilder.nuspec",
+        "sass.png",
+        "tool/AdvancedStringBuilder.dll",
+        "tool/CommandLine.dll",
+        "tool/LibSassBuilder.deps.json",
+        "tool/LibSassBuilder.dll",
+        "tool/LibSassBuilder.exe",
+        "tool/LibSassBuilder.pdb",
+        "tool/LibSassBuilder.runtimeconfig.json",
+        "tool/LibSassHost.dll",
+        "tool/runtimes/linux-x64/native/libsass.so",
+        "tool/runtimes/osx-x64/native/libsass.dylib",
+        "tool/runtimes/win-x64/native/libsass.dll",
+        "tool/x64/libsass.dll"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.3": {
@@ -2886,6 +2923,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "EntityFramework6.Npgsql >= 6.4.3",
+      "LibSassBuilder >= 2.0.1",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.3",
       "Microsoft.AspNetCore.Hosting.WindowsServices >= 6.0.3",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.3",
@@ -2934,6 +2972,10 @@
           "EntityFramework6.Npgsql": {
             "target": "Package",
             "version": "[6.4.3, )"
+          },
+          "LibSassBuilder": {
+            "target": "Package",
+            "version": "[2.0.1, )"
           },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",

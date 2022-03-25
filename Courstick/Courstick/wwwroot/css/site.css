@@ -9,6 +9,10 @@ p {
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+}
+
 
 
 body {
@@ -78,7 +82,7 @@ h1 {
 }
 
 .nav_item:hover {
-  color: rgb(130, 130, 161);
+  color: #FF3F3A;
 }
 
 .reg-link {
@@ -89,7 +93,7 @@ h1 {
 }
 
 .reg-link:hover {
-  color: rgb(130, 130, 161);
+  color: #FF3F3A;
 }
 
 main {
@@ -228,13 +232,11 @@ main {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-}
-
-.courses-list-row:first-child {
-  margin-top: 0;
+  flex-wrap: wrap;
 }
 
 .course-card {
+  margin-top: 10px;
   display: flex;
   max-width: 600px;
   min-width: 214px;

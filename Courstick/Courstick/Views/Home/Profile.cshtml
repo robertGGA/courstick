@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Авторизация";
+}
+
+<div class="main_block_gray">
+    <div class="main_container">
+        <div class="profile-container">
+            <h1 class="profile-label">Мой кабинет</h1>
+
+            <div class="profile-content">
+                <div class="user-info-container">
+                    <img class="avatar-img" src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg" alt="avatar"/>
+                    <div class="user-info">
+                        <h2>Русский кот</h2>
+                        <p>Или не русский?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="extra-profile-container">
+                <ul class="profile-settings">
+                    <li>
+                        <a href="/">Профиль</a>
+                    </li>
+                    <li>
+                        <a href="/">Настройки</a>
+                    </li>
+                    <li>
+                        <a href="/">Пройденные курсы</a>
+                    </li>
+
+                </ul>
+
+                <div class="profile-course">
+                    <div class="courses-first-row">
+                        <h2>Ваши курсы</h2>
+                        <input class="search-container-profile" placeholder="Найдите нужный курс" type="search"/>
+                    </div>
+                    <div class="cards-container">
+                        @Html.Partial("Partials/_ProfileCard", null)
+                        @Html.Partial("Partials/_ProfileCard", null)
+                        @Html.Partial("Partials/_ProfileCard", null)
+                        @Html.Partial("Partials/_ProfileCard", null)
+                        @Html.Partial("Partials/_ProfileCard", null)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/css/profileStyles.css" xmlns="http://www.w3.org/1999/html">

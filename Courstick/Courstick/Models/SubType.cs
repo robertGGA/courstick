@@ -7,10 +7,6 @@ namespace Courstick.Models
         [Key]
         public int SubTypeId { get; set; }
         public string Criterion { get; set; }
-        public virtual ICollection<Course> Courses { get; set; }
-        public SubType()
-        { 
-            Courses = new List<Course>();
-        }
+        public List<Course> Courses { get; set; } 
     }
 }

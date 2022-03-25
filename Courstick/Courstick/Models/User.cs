@@ -8,18 +8,14 @@ namespace Courstick.Models
         public int UserId { get; set; }
         public string Name { get; set; } // имя пользователя
         public string Surname { get; set; }
-        public byte[] Avater { get; set; }
-        public string Lofin { get; set; }
+        public byte[] Avatar { get; set; }
+        public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public int Phone { get; set; }
+        public List<Course> AuthorOf { get; set; } 
         public Role UserRole { get; set; }
-        public virtual ICollection<Course> Courses { get; set; }
-        public virtual ICollection<Subscription> Subscriptions { get; set; }
-        public User()
-        {
-            Courses = new List<Course>();
-            Subscriptions = new List<Subscription>();
-        }
+        public List<Course> Courses { get; set; } 
+        public List<Subscription> Subscriptions { get; set; } 
     }
 }

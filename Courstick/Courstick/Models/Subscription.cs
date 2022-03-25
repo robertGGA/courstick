@@ -8,10 +8,6 @@ namespace Courstick.Models
         public int SubscriptionId { get; set; }
         public string SubscriptionName { get; set; }
         public SubType SubscriptionType { get; set; }
-        public virtual ICollection<User> Users { get; set; }
-        public Subscription()
-        {
-            Users = new List<User>();
-        }
+        public List<User> Users { get; set; }
     }
 }

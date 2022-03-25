@@ -17,7 +17,14 @@ namespace Courstick.Models
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
-            Database.EnsureCreated();   // создаем базу данных при первом обращении
+            Database.EnsureCreated();   
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Course>().HasMany(c => c.Author).WithMany(c => c.AuthorOf);
+            modelBuilder.Entity<Course>().HasMany(c => c.Users).WithMany(c => c.Courses);
+            base.OnModelCreating(modelBuilder);
+        }   
     }
 }

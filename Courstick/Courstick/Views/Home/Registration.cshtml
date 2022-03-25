@@ -2,16 +2,31 @@
 @{
     ViewData["Title"] = "Регистрация";
 }
-<div class="main_block_gray">
+<div class="main_block_gray" style="height: 100%">
     <div class="main_container">
         <div class="login-container-wrapper">
             <div class="login-container" >
                 <h2 class="title_login">Регистрация</h2>
                 <form class="login-form">
-                    <input placeholder="Логин" class="input-form" type="text"/>
-                    <input placeholder="Почта" class="input-form" type="email"/>
-                    <input placeholder="Пароль" class="input-form" type="password"/>
-                    <input placeholder="Повторите пароль" class="input-form" type="password"/>
+                    <label class="input-wrapper">
+                        <p>Логин</p>
+                        <input placeholder="Ваш логин" class="input-form" type="text"/>
+                    </label>
+                    
+                    <label class="input-wrapper">
+                        <p>Email</p>
+                        <input placeholder="Ваш email" class="input-form" type="email"/>
+                    </label>
+                    
+                    <label class="input-wrapper">
+                        <p>Пароль</p>
+                        <input class="input-form" type="password"/>
+                    </label>
+                    
+                    <label class="input-wrapper">
+                    <p>Повторите пароль</p>
+                        <input  class="input-form" type="password"/>
+                    </label>
                     <button class="submit-form-button orange-button">
                         Зарегистрироваться
                     </button>

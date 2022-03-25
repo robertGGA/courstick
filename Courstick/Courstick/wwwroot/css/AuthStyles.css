@@ -3,9 +3,9 @@
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     max-width: 480px;
-    max-height: 532px;
     background: white;
     border-radius: 15px;
     padding: 48px;
@@ -17,9 +17,14 @@
 }
 
 .login-form {
-    margin-top: 38px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid #E5E8ED;
+}
+
+.input-wrapper {
+    margin-top: 20px;
 }
 
 .input-form {
@@ -27,13 +32,9 @@
     box-sizing: border-box;
     border-radius: 8px;
     height: 45px;
-    margin-top: 24px;
+    margin-top: 8px;
     padding: 0 10px;
-    
-}
-
-.input-form:first-child {
-    margin-top: 0;
+    width: 100%;
 }
 
 .title_login {
@@ -41,6 +42,7 @@
     font-weight: 600;
     font-size: 28px;
     line-height: 32px;
+    justify-content: center;
 }
 
 .submit-form-button {
@@ -50,12 +52,27 @@
     border-radius: 8px;
 }
 
+.saveme-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.saveme-checkbox input:checked {
+    background: #FF3F3A;
+}
+
 .under-form-links {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .test {
     background: black;
 }
+
+a {
+    color: rgba(255, 63, 58, 1);
+;
+}
+

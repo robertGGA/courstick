@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Bq5hJf7hCGMMhmx84uvDXrfBPrwB0a1DWKJPAn3BWiY=",
+  "Hash": "gQfPasz0UV/Q9GdPVTauNdaVr6CpVg5jJ1U1pcZqSqw=",
   "Source": "Courstick",
   "BasePath": "_content/Courstick",
   "Mode": "Default",
@@ -1105,6 +1105,23 @@
       "OriginalItemSpec": "wwwroot/assets/.DS_Store"
     },
     {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg"
+    },
+    {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/assets/illustration (1).svg",
       "SourceId": "Courstick",
       "SourceType": "Discovered",
@@ -1207,6 +1224,23 @@
       "OriginalItemSpec": "wwwroot/css/button.css"
     },
     {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/cards.css",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "css/cards.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/cards.css"
+    },
+    {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/homepageStyles.css",
       "SourceId": "Courstick",
       "SourceType": "Discovered",
@@ -1222,6 +1256,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/homepageStyles.css"
+    },
+    {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/profileStyles.css",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "css/profileStyles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/profileStyles.css"
     },
     {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/site.css",

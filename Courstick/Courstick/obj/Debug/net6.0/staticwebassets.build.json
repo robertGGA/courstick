@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O+WxbrUiphGRdrU58s9+/js2NXHFQcUJDD6d7QmHgHw=",
+  "Hash": "Pwtvd4gx6zZaNab/2+XF0L4wg+syl3NurIVofKHlgQ8=",
   "Source": "Courstick",
   "BasePath": "_content/Courstick",
   "Mode": "Default",
@@ -1256,6 +1256,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/cardStyles/cardStyles.css"
+    },
+    {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/coursePageStyles.css",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "css/coursePageStyles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/coursePageStyles.css"
     },
     {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/homepageStyles.css",

@@ -58,6 +58,11 @@ namespace Courstick.Controllers
             return View();
         }
 
+        public IActionResult CreateCourse()
+        {
+            return View();
+        }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

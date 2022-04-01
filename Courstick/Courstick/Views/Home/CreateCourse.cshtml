@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Create course";
+}
+
+<div class="main_block_colored">
+        <div class="main_container">
+            <div class="add-course-first-block">
+                <div class="course-image-wrapper">
+                    <div class="course-image-container">
+                        <img src="" class="course-image"/>
+                    </div>
+                    <form class="upload-image-form">
+                        <label class="upload-image-form-label" for="img">Выберите обложку для курса</label>
+                        <input class="" type="file" id="img" name="img" accept="image/*">
+                    </form>
+                </div>
+
+                <div class="course-image-wrapper">
+                    <h1>
+                        Название курса
+                    </h1>
+                    <input type="text" class="input-label"/>
+
+                    <h1 class="description-title">
+                        Описание
+                    </h1>
+                    <textarea required placeholder="Описание" class="input-label input-desc">
+
+                    </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="main_block_gray">
+    <div class="main_container">
+        <div class="lessons-container">
+            <button class="orange-button big-button add-lesson-button">Добавить курс</button>
+            <ul class="added-lesson-list">
+                <li class="added-lesson-container">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/css/createCourseStyles.css" xmlns="http://www.w3.org/1999/html">

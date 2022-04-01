@@ -1,0 +1,108 @@
+
+
+.course-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+}
+
+.course-image {
+    width: 500px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.upload-image-form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-image-container {
+    flex-basis: 600px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: gray;
+}
+
+.upload-image-form-label {
+    color: #1E212C;
+    font-size: 20px;
+}
+
+input::-webkit-file-upload-button {
+    border: none;
+    background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+    color: white;
+    padding: 10px 32px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+input::-webkit-file-upload-button:hover {
+    background: linear-gradient(55.95deg, #e03631 0%, #ce4904 100%);
+}
+
+.add-course-first-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-label {
+    max-width: 300px;
+    display: flex;
+    padding: 10px 15px;
+    border: 1px solid #ce4904;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.input-desc {
+    font-size: 12px;
+    height: 90px;
+}
+
+.input-desc::placeholder {
+    font-size: 25px;
+    color: #787A80;
+}
+
+
+.course-image-wrapper:last-child {
+    display: flex;
+    flex-basis: 50%;
+    margin-left: 30px;
+}
+
+.description-title {
+    margin-top: 15px;
+}
+
+.lessons-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-lesson-button {
+    max-width: 200px;
+}
+
+.added-lesson-list {
+    margin-top: 30px;
+    list-style-type: none;
+    max-width: 800px;
+}
+
+.added-lesson-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #1E212C;
+    border-radius: 4px;
+    border: 2px solid #1E212C;
+    padding: 10px;
+}

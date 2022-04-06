@@ -1,0 +1,37 @@
+.wrapper-settings-course-list {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.settings-course-list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.your-course-card {
+    display: flex;
+    max-height: 200px;
+    margin-top: 15px;
+}
+
+.img-your-course {
+    max-height: inherit;
+    width: 200px;
+    object-fit: cover;
+}
+
+.your-course-card-info-wrapper {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    max-height: 200px;
+    flex-direction: column;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid black;
+    border-left: none;
+}

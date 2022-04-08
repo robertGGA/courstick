@@ -17,21 +17,7 @@ namespace Courstick.Controllers
         {
             return View();
         }
-
-        public IActionResult Authorization()
-        {
-            return View();
-        }
-
-        public IActionResult Registration()
-        {
-            return View();
-        }
-
-        public IActionResult Profile()
-        {
-            return View();
-        }
+        
 
         public IActionResult Search()
         {
@@ -43,30 +29,11 @@ namespace Courstick.Controllers
             return View();
         }
 
-        public IActionResult Course()
-        {
-            return View();
-        }
-
-        public IActionResult Lesson()
-        {
-            return View();
-        }
-
         public IActionResult Contacts()
         {
             return View();
         }
 
-        public IActionResult CreateCourse()
-        {
-            return View();
-        }
-
-        public IActionResult YourCourses()
-        {
-            return View();
-        }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

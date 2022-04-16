@@ -1,3 +1,5 @@
+@using Courstick.Views.Auth
+@model AuthorizationModel
 @{
     ViewData["Title"] = "Авторизация";
 }
@@ -10,11 +12,11 @@
                 <form class="login-form">
                     <label class="input-wrapper">
                         <p>Email</p>
-                        <input placeholder="Ваша действующая почта" class="input-form" type="email"/>
+                        <input placeholder="Ваша действующая почта" class="input-form" asp-for="Login" type="email"/>
                     </label>
                     <label class="input-wrapper">
                         <p>Пароль</p>
-                        <input placeholder="Пароль" class="input-form" type="password"/>
+                        <input placeholder="Пароль" class="input-form" asp-for="Password" type="password"/>
                     </label>
                     
                     <div class="under-form-links">

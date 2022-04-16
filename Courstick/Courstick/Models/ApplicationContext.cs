@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Courstick.Models
 {
-    public class ApplicationContext : DbContext
+    public class ApplicationContext : IdentityDbContext<User>
     {
         
         public DbSet<Role> Roles { get; set; }
@@ -15,10 +17,7 @@ namespace Courstick.Models
         public DbSet<Tag> Tags { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
-            : base(options)
-        {
-            Database.EnsureCreated();   
-        }
+            : base(options) => Database.EnsureCreated();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

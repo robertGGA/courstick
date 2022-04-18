@@ -34,4 +34,8 @@
     <None Include="wwwroot\css\AuthStyles.css" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Courstick.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

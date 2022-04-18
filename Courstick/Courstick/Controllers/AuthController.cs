@@ -1,3 +1,4 @@
+using Courstick.Core.Models;
 using Courstick.Views.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

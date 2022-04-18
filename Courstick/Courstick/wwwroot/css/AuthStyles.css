@@ -73,6 +73,28 @@
 
 a {
     color: rgba(255, 63, 58, 1);
-;
 }
+
+#email-error {
+    display: none;
+    font-size: 14px;
+    margin-top: 5px;
+    color: red;
+}
+
+#pass-error {
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#reppassword-error {
+    display: none;
+    font-size: 14px;
+    margin-top: 5px;
+    color: red;
+}
+
+
 

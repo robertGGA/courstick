@@ -1,5 +1,5 @@
 @using Courstick.Views.Auth
-@model RegisterModel;
+@model RegisterModel
 @{
     ViewData["Title"] = "Регистрация";
 }
@@ -11,26 +11,33 @@
                 <form class="login-form">
                     <label class="input-wrapper">
                         <p>Логин</p>
-                        <input placeholder="Ваш логин" class="input-form" asp-for="Login"/>
+                        <input placeholder="Ваш логин" class="input-form" asp-for="Login" required/>
                     </label>
                     
                     <label class="input-wrapper">
                         <p>Email</p>
-                        <input placeholder="Ваш email" class="input-form" asp-for="Email" type="email"/>
+                        <input id="email" placeholder="Ваш email" class="input-form" asp-for="Email" type="email" required="required"/>
+                        <p id="email-error">
+                                                    Неправильный формат почты
+                                                </p>
                     </label>
                     
                     <label class="input-wrapper">
                         <p>Пароль</p>
-                        <input class="input-form" asp-for="Password" type="password"/>
+                        <input id="password" class="input-form" asp-for="Password" type="password" required/>
+                        <p id="pass-error">
+                                                    Пароль должен содержать минимум 8 элементов, 1 число и 1 букву
+                                                    </p>
                     </label>
                     
                     <label class="input-wrapper">
                     <p>Повторите пароль</p>
-                        <input  class="input-form" asp-for="ConfirmPassword" type="password"/>
+                        <input id="repeat_password" class="input-form" asp-for="ConfirmPassword" type="password" required/>
+                        <p id="reppassword-error">
+                            Пароли не совпадают
+                            </p>
                     </label>
-                    <button class="submit-form-button orange-button">
-                        Зарегистрироваться
-                    </button>
+                    <input type="submit" placeholder="Зарегистрироваться" class="submit-form-button orange-button"/>
                 </form>
                 <div class="under-form-links">
                     <a asp-area="" asp-controller="Auth" asp-action="Authorization">Уже есть аккаунт?</a>
@@ -41,4 +48,5 @@
     </div>
 </div>
 
+<script src="~/js/auth.js" type="text/javascript"></script>
 <link rel="stylesheet" href="~/css/AuthStyles.css" xmlns="http://www.w3.org/1999/html">

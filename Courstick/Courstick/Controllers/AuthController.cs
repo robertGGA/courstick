@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 using Courstick.Core.Models;
 using Courstick.Views.Auth;
 using Microsoft.AspNetCore.Identity;
@@ -68,6 +69,8 @@ public class AuthController : Controller
     }
 }
 =======
+=======
+>>>>>>> Stashed changes
 ﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Courstick.Controllers
@@ -80,4 +83,7 @@ namespace Courstick.Controllers
         }
     }
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

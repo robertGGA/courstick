@@ -64,3 +64,7 @@ header {
     background: none;
     color: #424551;
 }
+
+.active_tab {
+    border: 1px solid #F75E05;
+}

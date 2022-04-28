@@ -2,6 +2,10 @@
     ViewData["Title"] = "Поиск";
 }
 
+@section Styles {
+    <link rel="stylesheet" href="~/css/searchPageStyles.css" xmlns="http://www.w3.org/1999/html">    
+}
+
 <div class="main_block_white">
     <div class="main_container">
         <div class="search-page-container">
@@ -31,7 +35,7 @@
                         </button>
                     </div>
 
-                    <input placeholder="Поиск" class="input-search" type="search"/>
+                    <input placeholder="Поиск" id="course-searcher" class="input-search" type="search"/>
                 </div>
                 
                 <div class="courses-list">
@@ -50,4 +54,8 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="~/css/searchPageStyles.css" xmlns="http://www.w3.org/1999/html">
+@section Scripts
+{
+    <script src="~/js/searchPageScript.js"></script>
+}
+

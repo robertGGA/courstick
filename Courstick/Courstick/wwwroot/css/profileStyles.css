@@ -79,8 +79,7 @@ li:first-child {
 }
 
 .cards-container {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: repeat(auto-fill, 390px)
 }

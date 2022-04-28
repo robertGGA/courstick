@@ -11,6 +11,7 @@
     <link
         rel="stylesheet"
         href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
 <div class="wr">
@@ -30,9 +31,6 @@
                         Курсы
                     </a>
 
-                    <a class="nav_item" asp-area="" asp-controller="Home" asp-action="Contacts">
-                        Контакты
-                    </a>
                     <a class="nav_item" href="/">
                         Обратная связь
                     </a>
@@ -40,9 +38,9 @@
             </div>
 
             <div class="half_of_header default_font_settings">
-                <button class="big-button orange-button default_font_settings">
+                <a class="big-button orange-button default_font_settings" asp-area="" asp-controller="Auth" asp-action="Registration">
                     Регистрация
-                </button>
+                </a>
                 <a class="reg-link" asp-area="" asp-controller="Auth" asp-action="Authorization">
                     <img style="margin-right: 3px" src="~/assets/reg.svg"/>
                     Войти

@@ -1,19 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@section Styles
+{
+        <link rel="stylesheet" href="~/css/sliderStyles.css" asp-append-version="true"/>
+        <link
+                rel="stylesheet"
+                href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+        />
+}
 <div class="main_block_colored">
     <div class="main_container">
         <div class="content-first-block">
             <div class="info-container-first-block">
                 <p class="title_first_block">Учись вместе с Courstick онлайн курсами</p>
                 <div class="buttons_container_first-block">
-                    <button class="big-button border-button default_font_settings">
+                    <a asp-area="" asp-controller="Home" asp-action="About" class="big-button border-button default_font_settings">
                         О нас
-                    </button>
-                    <button class="big-button orange-button default_font_settings">
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="Search" class="big-button orange-button default_font_settings">
                         Поиск курсов
-                    </button>
+                    </a>
                 </div>
             </div>
             <div>
@@ -41,6 +48,39 @@
     </div>
 </div>
 
+<div class="main_block_gray">
+            <div class="main_container">
+                <div class="our-team-container">
+                    <p class="subline-courses">Возможно вас заинтересует</p>
+                    <h1 style="margin-top: 6px">Популярные курсы</h1>
+
+
+                    <div class="swiper slider-container">
+                        <div class="swiper-wrapper swiper-custom-container">
+                            <div class="swiper-slide slider-element">
+                                <img class="img-slider-course"
+                                     src="./assets/Без%20названия.jpeg"/>
+                                <p class="default_font_settings tutor-name">Настя</p>
+                                <p class="default_font_settings tutor-post">Founder and CEO</p>
+                            </div>
+
+                            <div class="swiper-slide slider-element">
+                                <img class="img-slider-course"
+                                     src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg"/>
+                                <p class="default_font_settings tutor-name">rfrf</p>
+                                <p class="default_font_settings tutor-post">Founder and CEO</p>
+                            </div>
+                        </div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 <div class="main_block_white">
     <div class="main_container">
         <div class="courses-block">
@@ -48,9 +88,9 @@
             <div class="courses-title">
                 <h1>Курсы</h1>
 
-                <button class="big-button border-button default_font_settings">
+                <a asp-area="" asp-controller="Home" asp-action="Search" class="big-button border-button default_font_settings">
                     Просмотреть все курсы
-                </button>
+                </a>
 
             </div>
 
@@ -103,3 +143,9 @@
         </div>
     </div>
 </div>
+
+@section Scripts
+{
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="~/js/homePageScript.js"></script>
+}

@@ -38,4 +38,8 @@
     <ProjectReference Include="..\Infrastructure\Courstick.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\uiStyles" />
+  </ItemGroup>
+
 </Project>

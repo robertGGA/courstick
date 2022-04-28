@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 using Courstick.Core.Models;
 using Courstick.Views.Auth;
 using Microsoft.AspNetCore.Identity;
@@ -66,3 +67,17 @@ public class AuthController : Controller
         return RedirectToAction("Index", "Home");
     }
 }
+=======
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Courstick.Controllers
+{
+    public class AuthController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
+}
+>>>>>>> Stashed changes

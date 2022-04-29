@@ -2,6 +2,11 @@
     ViewData["Title"] = "Авторизация";
 }
 
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/profileStyles.css" xmlns="http://www.w3.org/1999/html">
+}
+
 <div class="main_block_gray">
     <div class="main_container">
         <div class="profile-container">
@@ -20,10 +25,10 @@
             <div class="extra-profile-container">
                 <ul class="profile-settings">
                     <li>
-                        <a href="/">Профиль</a>
+                        <a asp-area="" asp-controller="CourseSettings" asp-action="YourCourses">Ваши курсы</a>
                     </li>
                     <li>
-                        <a href="/">Настройки</a>
+                        <button class="button-links" id="settings-button">Настройки</button>
                     </li>
                     <li>
                         <a href="/">Пройденные курсы</a>
@@ -49,4 +54,9 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="~/css/profileStyles.css" xmlns="http://www.w3.org/1999/html">
+@Html.Partial("Partials/Modals/modalSettings");
+
+@section Scripts
+{
+    <script src="~/js/profileScript.js"></script>
+}

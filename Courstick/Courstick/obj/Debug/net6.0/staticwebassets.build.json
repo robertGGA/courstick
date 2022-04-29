@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aER7V/AvwzzejfCCKE7QPX+mTJcTVj742B+jBKjx7Ts=",
+  "Hash": "IyVFeo4e/8w+4d7F/kWn2AMY7BcWcmqvtB0Dt+jjcMg=",
   "Source": "Courstick",
   "BasePath": "_content/Courstick",
   "Mode": "Default",
@@ -1411,6 +1411,40 @@
       "OriginalItemSpec": "wwwroot/css/uiStyles/cardStyles/previewCardStyles.css"
     },
     {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/uiStyles/modalStyles/defaultModalStyles.css",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "css/uiStyles/modalStyles/defaultModalStyles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/uiStyles/modalStyles/defaultModalStyles.css"
+    },
+    {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/uiStyles/modalStyles/settingsStyles.css",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "css/uiStyles/modalStyles/settingsStyles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/uiStyles/modalStyles/settingsStyles.css"
+    },
+    {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/yourCourses.css",
       "SourceId": "Courstick",
       "SourceType": "Discovered",
@@ -1511,6 +1545,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/homePageScript.js"
+    },
+    {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/js/profileScript.js",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "js/profileScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/profileScript.js"
     },
     {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/js/searchPageScript.js",

@@ -25,6 +25,10 @@
     margin: 0;
 }
 
+.about-course-block:last-child {
+    margin-bottom: 50px;
+}
+
 .about-course {
     display: flex;
     flex-direction: column;

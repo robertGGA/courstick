@@ -74,7 +74,7 @@
                         </p>
                     </div>
 
-                    <button class="orange-button big-button">
+                    <button id="open-modal-button"  class="orange-button big-button">
                         Присоединиться к курсу
                     </button>
                 </div>
@@ -139,4 +139,10 @@
     </div>
 </div>
 
+@Html.Partial("Partials/Modals/BuyModal");
+
+@section Scripts
+{
+    <script src="~/js/modalScripts.js"></script>
+}
 <link rel="stylesheet" href="~/css/coursePageStyles.css" xmlns="http://www.w3.org/1999/html">

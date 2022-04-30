@@ -13,7 +13,15 @@ builder.Services.AddControllersWithViews();
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(connection));
 
-builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<ApplicationContext>();
+builder.Services.AddIdentity<User, Role>(o =>
+{
+    if(builder.Environment.IsDevelopment())
+    {
+        o.Password.RequireDigit = false;
+        o.Password.RequireUppercase = false;
+        o.Password.RequireNonAlphanumeric = false;
+    }
+}).AddEntityFrameworkStores<ApplicationContext>();
 
 var app = builder.Build();
 
@@ -36,5 +44,16 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+using var scope = app.Services.CreateScope();
+var scopedProvider = scope.ServiceProvider;
+
+try
+{
+    var roleManager = scopedProvider.GetRequiredService<RoleManager<Role>>();
+    var seeding = new Seeding(roleManager);
+    await seeding.Seed();
+}
+catch (Exception){}
 
 app.Run();

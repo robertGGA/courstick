@@ -9,10 +9,10 @@
         <div class="login-container-wrapper">
             <div class="login-container" >
                 <h2 class="title_login">Вход</h2>
-                <form class="login-form">
+                <form method="post" class="login-form">
                     <label class="input-wrapper" >
-                        <p>Email</p>
-                        <input id="email" placeholder="Ваша действующая почта" class="input-form" type="email" asp-for="Login" required/>
+                        <p>Login</p>
+                        <input id="login" placeholder="Ваша действующая почта" class="input-form" type="text" asp-for="Login" required/>
                         <p id="email-error">
                             Неправильный формат почты
                         </p>

@@ -7,7 +7,6 @@ namespace Courstick.Infrastructure
 {
     public class ApplicationContext : IdentityDbContext<User, Role, int>
     {
-
         public DbSet<Role> Roles => Set<Role>();
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Course> Courses { get; set; }
@@ -18,13 +17,30 @@ namespace Courstick.Infrastructure
         public DbSet<Tag> Tags { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
-            : base(options) {}
+            : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Course>().HasMany(c => c.Author).WithMany(c => c.AuthorOf).UsingEntity("AuthorOfCourse");
             modelBuilder.Entity<Course>().HasMany(c => c.Users).WithMany(c => c.Courses);
             base.OnModelCreating(modelBuilder);
+        }
+    }
+
+    public class Seeding
+    {
+        private readonly RoleManager<Role> _roleManager;
+
+        public Seeding(RoleManager<Role> roleManager)
+        {
+            _roleManager = roleManager;
+        }
+        public async Task Seed()
+        {
+            if (!await _roleManager.RoleExistsAsync("defaultUser"))
+            {
+                await _roleManager.CreateAsync(new Role("defaultUser"));
+            }
         }
     }
 }

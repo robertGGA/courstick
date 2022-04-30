@@ -6,8 +6,9 @@ namespace Courstick.Core.Models
 {
     public class Role: IdentityRole<int>
     {
-        [Key]
-        public int RoleId { get; set; }
-        public string Name { get; set; }
+        public Role(string name ):base(name)
+        {
+            
+        }
     }
 }

@@ -2,7 +2,6 @@ using Courstick.Core.Models;
 using Courstick.Views.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace Courstick.Controllers;
 
@@ -10,6 +9,13 @@ public class AuthController : Controller
 {
     private readonly UserManager<User> userManager;
     private readonly SignInManager<User> signInManager;
+
+    public AuthController(UserManager<User> userManager, SignInManager<User> signInManager)
+    {
+        this.userManager = userManager;
+        this.signInManager = signInManager;
+    }
+
     // GET
     public IActionResult Authorization()
     {
@@ -29,8 +35,10 @@ public class AuthController : Controller
             return View();
         }
 
-        var user = new User { Email = model.Email, UserName = model.Login };
+        var user = new User { Email = model.Email, UserName = model.Login};
+        //user.SecurityStamp = Guid.NewGuid().ToString();
         var result = await userManager.CreateAsync(user, model.Password);
+        await userManager.AddToRoleAsync(user, "defaultUser");
 
         if (!result.Succeeded)
         {
@@ -50,10 +58,10 @@ public class AuthController : Controller
     [HttpPost]
     public async Task<IActionResult> Authorization(AuthorizationModel model)
     {
-        if (!ModelState.IsValid)
-        {
-            return View();
-        }
+        // if (!ModelState.IsValid)
+        // {
+        //     return View();
+        // }
 
         var result = await signInManager.PasswordSignInAsync(model.Login, model.Password, model.IsRemember, false);
 
@@ -63,6 +71,13 @@ public class AuthController : Controller
             return View(model);
         }
 
+        return RedirectToAction("Index", "Home");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> LogOut()
+    {
+        await signInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
     }
 }

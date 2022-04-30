@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Courstick", "Courstick\Courstick.csproj", "{39890FF3-701F-4122-AF28-DF597CA3B8B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courstick.Infrastructure", "Infrastructure\Courstick.Infrastructure.csproj", "{0378F301-44C4-4941-A398-5B79287192BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Courstick.Infrastructure", "Infrastructure\Courstick.Infrastructure.csproj", "{0378F301-44C4-4941-A398-5B79287192BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courstick.Core", "Courstick.Core\Courstick.Core.csproj", "{FFCDEA5A-7C8E-42DA-8A10-C447DF481297}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Courstick.Core", "Courstick.Core\Courstick.Core.csproj", "{FFCDEA5A-7C8E-42DA-8A10-C447DF481297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

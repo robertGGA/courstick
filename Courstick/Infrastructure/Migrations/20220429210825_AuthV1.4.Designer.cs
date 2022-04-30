@@ -3,6 +3,7 @@ using System;
 using Courstick.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Courstick.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220429210825_AuthV1.4")]
+    partial class AuthV14
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,6 +189,15 @@ namespace Courstick.Infrastructure.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ConcurrencyStamp = "4642e85f-9114-4fef-a502-636bc9b651af",
+                            Name = "defaultUser",
+                            NormalizedName = "DEFAULTUSER"
+                        });
                 });
 
             modelBuilder.Entity("Courstick.Core.Models.Status", b =>
@@ -331,6 +342,9 @@ namespace Courstick.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
 
+                    b.Property<int>("UserRoleId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -339,6 +353,8 @@ namespace Courstick.Infrastructure.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
+
+                    b.HasIndex("UserRoleId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -548,6 +564,17 @@ namespace Courstick.Infrastructure.Migrations
                     b.HasOne("Courstick.Core.Models.Course", null)
                         .WithMany("Tag")
                         .HasForeignKey("CourseId");
+                });
+
+            modelBuilder.Entity("Courstick.Core.Models.User", b =>
+                {
+                    b.HasOne("Courstick.Core.Models.Role", "UserRole")
+                        .WithMany()
+                        .HasForeignKey("UserRoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserRole");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

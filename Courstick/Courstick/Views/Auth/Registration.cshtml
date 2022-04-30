@@ -8,15 +8,15 @@
         <div class="login-container-wrapper">
             <div class="login-container" >
                 <h2 class="title_login">Регистрация</h2>
-                <form class="login-form">
-                    <label class="input-wrapper">
+                <form method="post" class="login-form" asp-action="Registration" >
+                    <label class="input-wrapper" >
                         <p>Логин</p>
                         <input placeholder="Ваш логин" class="input-form" asp-for="Login" required/>
                     </label>
                     
                     <label class="input-wrapper">
                         <p>Email</p>
-                        <input id="email" placeholder="Ваш email" class="input-form" asp-for="Email" type="email" required="required"/>
+                        <input id="email" placeholder="Ваш email" class="input-form"  asp-for="Email" type="email" required="required"/>
                         <p id="email-error">
                                                     Неправильный формат почты
                                                 </p>

@@ -19,6 +19,10 @@ public class AuthController : Controller
     // GET
     public IActionResult Authorization()
     {
+        if (HttpContext.Session.GetString("login") != null)
+        {
+            return Redirect("/Profile/profile");
+        }
         return View();
     }
 
@@ -30,10 +34,12 @@ public class AuthController : Controller
     [HttpPost]
     public async Task<IActionResult> Registration(RegisterModel model) 
     {
+        
         if (!ModelState.IsValid)
         {
             return View();
         }
+
 
         var user = new User { Email = model.Email, UserName = model.Login};
         var result = await userManager.CreateAsync(user, model.Password);
@@ -55,22 +61,23 @@ public class AuthController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Authorization(AuthorizationModel model)
+    public async Task<IActionResult> Authorization([FromBody]AuthorizationModel model)
     {
-        // if (!ModelState.IsValid)
-        // {
-        //     return View();
-        // }
+        if (!ModelState.IsValid)
+        {
+        }
 
         var result = await signInManager.PasswordSignInAsync(model.Login, model.Password, model.IsRemember, false);
 
         if (!result.Succeeded)
         {
-            ModelState.AddModelError("", "Incorrect password or user name!");
-            return View(model);
+            return BadRequest(new { Message = "Неправильный логин или пароль" });
         }
-
-        return RedirectToAction("Index", "Home");
+        Console.WriteLine(result);
+        
+        
+        HttpContext.Session.SetString("login", model.Login);
+        return Redirect("/Profile/profile");
     }
 
     [HttpGet]

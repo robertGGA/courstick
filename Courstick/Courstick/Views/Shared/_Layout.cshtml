@@ -36,16 +36,25 @@
                     </a>
                 </nav>
             </div>
-
-            <div class="half_of_header default_font_settings">
-                <a class="big-button orange-button default_font_settings" asp-area="" asp-controller="Auth" asp-action="Registration">
-                    Регистрация
+            @if (Context.Session.GetString("login") != null)
+            {
+                <a class="big-button orange-button default_font_settings" asp-area="" asp-controller="Profile" asp-action="Profile">
+                    Профиль
                 </a>
-                <a class="reg-link" asp-area="" asp-controller="Auth" asp-action="Authorization">
-                    <img style="margin-right: 3px" src="~/assets/reg.svg"/>
-                    Войти
-                </a>
-            </div>
+            }
+            else
+            {
+                <div class="half_of_header default_font_settings">
+                    <a class="big-button orange-button default_font_settings" asp-area="" asp-controller="Auth" asp-action="Registration">
+                        Регистрация
+                    </a>
+                    <a class="reg-link" asp-area="" asp-controller="Auth" asp-action="Authorization">
+                        <img style="margin-right: 3px" src="~/assets/reg.svg"/>
+                        Войти
+                    </a>
+                </div>
+            }
+            
         </div>
     </header>
 

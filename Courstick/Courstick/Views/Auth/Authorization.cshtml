@@ -9,17 +9,17 @@
         <div class="login-container-wrapper">
             <div class="login-container" >
                 <h2 class="title_login">Вход</h2>
-                <form method="post" class="login-form">
+                <form id="login-form" class="login-form">
                     <label class="input-wrapper" >
-                        <p>Login</p>
-                        <input id="login" placeholder="Ваша действующая почта" class="input-form" type="text" asp-for="Login" required/>
-                        <p id="email-error">
-                            Неправильный формат почты
-                        </p>
+                        <p>Логин</p>
+                        <input id="login" placeholder="Ваш Логин" class="input-form" type="text" required/>
                     </label>
                     <label class="input-wrapper">
                         <p>Пароль</p>
-                        <input placeholder="Пароль" class="input-form" asp-for="Password" type="password" required/>
+                        <input id="password" placeholder="Пароль" class="input-form" type="password" required/>
+                        <p id="pass-error">
+                            Неправильный формат почты
+                        </p>
                     </label>
                     
                     <div class="under-form-links">
@@ -32,7 +32,7 @@
                         <a href="">Забыли пароль?</a>
                     </div>
                     
-                    <input type="submit" class="submit-form-button orange-button" placeholder="Войти"/>
+                    <input id="login-submit" type="submit" class="submit-form-button orange-button" placeholder="Войти"/>
                     
                 </form>
                 <div class="under-form-links">

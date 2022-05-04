@@ -1,7 +1,13 @@
+@using Courstick.Views.CourseSettings
+@model CreateCourseModel
 @{
     ViewData["Title"] = "Create course";
 }
-
+@*
+    1)Добавление в лист поля модели
+    2)Будет ли сохраняться картинка 
+    3)
+*@
 <div class="main_block_colored">
         <div class="main_container">
             <div class="add-course-first-block">
@@ -11,30 +17,37 @@
                     </div>
                     <form class="upload-image-form">
                         <label class="upload-image-form-label" for="img">Выберите обложку для курса</label>
-                        <input class="" type="file" id="img" name="img" accept="image/*">
+                        <input class="" type="file" asp-for="Image" id="img" name="img" accept="image/*">
                     </form>
                 </div>
+                <form asp-action="CreateCourse" asp-controller="CourseSettings" method="post">
+                    <div class="course-image-wrapper">
+                        <h1>
+                            Название курса
+                        </h1>
+                        <input type="text" asp-for="Name" class="input-label"/>
 
-                <div class="course-image-wrapper">
-                    <h1>
-                        Название курса
-                    </h1>
-                    <input type="text" class="input-label"/>
+                        <h1 class="description-title">
+                            Описание
+                        </h1>
+                        <textarea required placeholder="Описание" asp-for="Description" class="input-label input-desc">
 
-                    <h1 class="description-title">
-                        Описание
-                    </h1>
-                    <textarea required placeholder="Описание" class="input-label input-desc">
+                        <h1>
+                            Цена курса
+                        </h1>
+                        <input type="text" asp-for="Price" class="input-label"/>
 
-                    </textarea>
-                </div>
+                        </textarea>
+                    </div>
+                    <button class="orange-button big-button add-lesson-button">Добавить урок</button>
+                </form>
             </div>
         </div>
     </div>
 <div class="main_block_gray">
     <div class="main_container">
         <div class="lessons-container">
-            <button class="orange-button big-button add-lesson-button">Добавить курс</button>
+            <button class="orange-button big-button add-lesson-button">Добавить урок</button>
             <ul class="added-lesson-list">
                 <li class="added-lesson-container">
                 </li>

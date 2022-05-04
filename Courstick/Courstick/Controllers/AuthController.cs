@@ -36,7 +36,6 @@ public class AuthController : Controller
         }
 
         var user = new User { Email = model.Email, UserName = model.Login};
-        //user.SecurityStamp = Guid.NewGuid().ToString();
         var result = await userManager.CreateAsync(user, model.Password);
         await userManager.AddToRoleAsync(user, "defaultUser");
 

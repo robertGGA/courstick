@@ -20,24 +20,35 @@
                         <input class="" type="file" asp-for="Image" id="img" name="img" accept="image/*">
                     </form>
                 </div>
-                <form asp-action="CreateCourse" asp-controller="CourseSettings" method="post">
+                <form asp-action="CreateCourse" style="margin-left: 60px" asp-controller="CourseSettings" method="post">
                     <div class="course-image-wrapper">
+                        <label>
                         <h1>
                             Название курса
                         </h1>
                         <input type="text" asp-for="Name" class="input-label"/>
-
-                        <h1 class="description-title">
-                            Описание
-                        </h1>
-                        <textarea required placeholder="Описание" asp-for="Description" class="input-label input-desc">
-
-                        <h1>
-                            Цена курса
-                        </h1>
-                        <input type="text" asp-for="Price" class="input-label"/>
-
-                        </textarea>
+                        </label>
+                        <div class="inputs_container">
+                            <label>
+                                <h1 class="description-title">
+                                    Краткое описание
+                                </h1>
+                                <input asp-for="Description" required class="input-label input-desc"/>
+                            </label>
+                            <label>
+                                <h1 class="description-title">
+                                    Описание
+                                </h1>
+                                <textarea required placeholder="Описание" asp-for="Description" class="input-label input-desc"></textarea>
+                            </label>
+                        </div>
+                        
+                        <label>
+                            <h1 class="description-title">
+                                Цена
+                            </h1>
+                            <input type="number" asp-for="Price" required class="input-label input-desc"/>
+                        </label>
                     </div>
                     <button class="orange-button big-button add-lesson-button">Добавить урок</button>
                 </form>
@@ -47,13 +58,51 @@
 <div class="main_block_gray">
     <div class="main_container">
         <div class="lessons-container">
-            <button class="orange-button big-button add-lesson-button">Добавить урок</button>
-            <ul class="added-lesson-list">
-                <li class="added-lesson-container">
-                </li>
-            </ul>
+            <button class="orange-button big-button" id="add-lesson-button">Добавить урок</button>
+            <div class="lessons">
+
+            </div>
         </div>
     </div>
 </div>
 
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+
+        <h2>
+            Выберите тип урока
+        </h2>
+        <div class="type-lesson_choose">
+            <button id="info_button" class="medium-button border-button">
+                Информативаный
+            </button>
+            <button id="test_button" class="medium-button border-button">
+                Тест
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="createLessonModal" class="modal">
+    <div class="modal-content">
+        <h2>
+            Введите данные
+        </h2>
+        <div class="type-lesson_choose">
+            <input id="lesson-text-input" type="text"/>
+            <input id="lessonSubmit" type="submit" class="orange-button big-button">
+        </div>
+    </div>
+</div>
+
+
 <link rel="stylesheet" href="~/css/createCourseStyles.css" xmlns="http://www.w3.org/1999/html">
+
+@section Scripts
+{
+    <script src="~/js/createCourseScript.js"></script>
+}
+

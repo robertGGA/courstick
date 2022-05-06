@@ -50,4 +50,5 @@ public class CourseSettingsController : Controller
 
         return RedirectToAction("Index", "Home");
     }
+    
 }

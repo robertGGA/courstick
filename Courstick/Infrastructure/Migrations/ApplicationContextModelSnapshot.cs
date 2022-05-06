@@ -133,23 +133,23 @@ namespace Courstick.Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("PageId"));
 
-                    b.Property<int>("CommentId")
+                    b.Property<int?>("CommentId")
                         .HasColumnType("integer");
 
                     b.Property<int?>("CourseId")
                         .HasColumnType("integer");
 
                     b.Property<byte[]>("Image")
-                        .IsRequired()
                         .HasColumnType("bytea");
 
                     b.Property<string>("Movie")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Text")
-                        .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
 
                     b.HasKey("PageId");
 
@@ -519,9 +519,7 @@ namespace Courstick.Infrastructure.Migrations
                 {
                     b.HasOne("Courstick.Core.Models.Comment", "Comment")
                         .WithMany()
-                        .HasForeignKey("CommentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CommentId");
 
                     b.HasOne("Courstick.Core.Models.Course", null)
                         .WithMany("Page")

@@ -41,11 +41,10 @@ public class CourseSettingsController : Controller
             Name = model.Name,
             Description = model.Description,
             Image = model.Image,
-            Price = model.Price
+            //Price = model.Price
         };
-
-        if (course.Author == null)
-            course.Author = new List<User>();
+        
+        course.Author = new List<User>();
         course.Author.Add(user);
 
         return RedirectToAction("Index", "Home");

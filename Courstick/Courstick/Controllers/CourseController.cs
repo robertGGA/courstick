@@ -10,5 +10,4 @@ public class CourseController : Controller
 {
     [HttpGet]
     public IActionResult Course() => View();
-
 }

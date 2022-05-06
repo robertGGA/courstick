@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Courstick.Core.Models;
+
 
 namespace Courstick.Views.CourseSettings
 {
@@ -10,5 +12,6 @@ namespace Courstick.Views.CourseSettings
         public double Price { get; set; }
         public string SmallDescription { get; set; }
         public int Type { get; set; }
+        public List<Page> Pages { get; set; }
     }
 }

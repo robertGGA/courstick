@@ -2,56 +2,70 @@
 <link rel="stylesheet" href="~/css/uiStyles/modalStyles/defaultModalStyles.css"/>
 
 <div id="modal">
-<div class="modal-content">
-    <div class="modal_first-row">
-        <h2>
-            Настройки
-        </h2>
+    <div class="modal-content">
+        <div class="modal_first-row">
+            <h2>
+                Настройки
+            </h2>
 
-        <button id="modal_close_button">
-            X
-        </button>
-    </div>
-
-    <div class="settings-info">
-        <img class="avatar-img" src="assets/image.png" alt="avatar"/>
-        <input type="file" class="setting-img-upload"/>
-        <div class="info-block-settings">
-            <span class="info-block-settings-first-row">
-                <b>Ваша почта</b>
-
-                <button class="button_change_info">
-                    Изменить
-                </button>
-            </span>
-
-            <p>fsdfsfd@gmail.com</p>
-
-            <span class="info-block-settings-first-row">
-                <b>Ваш пароль</b>
-
-                <button class="button_change_info">
-                    Изменить
-                </button>
-            </span>
-
-            <p>********</p>
-
-            <span class="info-block-settings-first-row">
-                <b>Ваш логин</b>
-
-                <button class="button_change_info">
-                    Изменить
-                </button>
-            </span>
-
-            <p>Русский кот</p>
+            <button id="modal_close_button">
+                X
+            </button>
         </div>
 
-        <button class="orange-button big-button">
-            Сохранить
-        </button>
+        <form class="settings-info">
+            <img class="avatar-img" src="#" id="avatar" alt="avatar"/>
+            <input type="file" accept="image/*" class="setting-img-upload" id="fileInput"/>
+            <div class="info-block-settings">
+                <span class="info-block-settings-first-row">
+                    <b>Ваша почта</b>
+                    <button class="button_change_info" id="change-email">
+                        Изменить
+                    </button>
+                </span>
+
+                <p>@ViewBag.email</p>
+                <p id="errorEmail">
+                    Неправильный формат почты
+                </p>
+                
+            
+                <input type="email" id="change-email-input" class="input-settings"/>
+
+                <span class="info-block-settings-first-row" id="change-password">
+                    <b>Ваш пароль</b>
+
+                    <button class="button_change_info" id="change-password">
+                        Изменить
+                    </button>
+                </span>
+
+                <p>********</p>
+
+                <input type="password" id="change-password-input" class="input-settings"/>
+                <p id="errorPassword">
+                    Неправильный формат пароля
+                </p>
+                
+
+                <span class="info-block-settings-first-row">
+                    <b>Ваш логин</b>
+
+                    <button class="button_change_info" id="change-login">
+                        Изменить
+                    </button>
+                </span>
+
+                <p>@ViewBag.login</p>
+                <input type="text" id="change-login-input" class="input-settings"/>
+            </div>
+
+            <button type="submit" class="orange-button big-button" id="submitButton">
+                Сохранить
+            </button>
+        </form>
     </div>
 </div>
-</div>
+
+<script src="~/js/ModalSettingsScript.js"></script>
 

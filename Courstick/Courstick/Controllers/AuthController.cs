@@ -79,11 +79,4 @@ public class AuthController : Controller
         HttpContext.Session.SetString("login", model.Login);
         return Redirect("/Profile/profile");
     }
-
-    [HttpGet]
-    public async Task<IActionResult> LogOut()
-    {
-        await signInManager.SignOutAsync();
-        return RedirectToAction("Index", "Home");
-    }
 }

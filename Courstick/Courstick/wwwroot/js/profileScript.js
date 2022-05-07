@@ -5,6 +5,7 @@ const body = document.querySelector('body');
 
 
 
+
 function closeModal() {
     modalSettings.style.display = "none";
     body.style.overflow = 'scroll';
@@ -35,4 +36,8 @@ function keyPress (e) {
     if(e.key === "Escape") {
         closeModal();
     }
+}
+
+function swapSettings() {
+    
 }

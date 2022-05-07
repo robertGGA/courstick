@@ -11,7 +11,7 @@
 <div class="main_block_colored">
     <div class="main_container">
         <div class="add-course-first-block">
-            <form asp-action="CreateCourse" style="margin-left: 60px" asp-controller="CourseSettings" method="post">
+            <form asp-action="CreateCourse" asp-controller="CourseSettings" method="post">
                 <div class="course-image-wrapper">
                     <div class="course-image-container">
                         <img src="" class="course-image"/>
@@ -47,10 +47,10 @@
                         <h1 class="description-title">
                             Цена
                         </h1>
-                        <input type="number" asp-for="Price" required class="input-label input-desc"/>
+                        <input type="number" min="1" asp-for="Price" required class="input-label input-desc"/>
                     </label>
                 </div>
-                <input id="login-submit" type="submit" class="orange-button big-button add-lesson-button" placeholder="Добавить урок"/>
+                <input placeholder="Цена в рублях" id="login-submit" type="submit" class="orange-button big-button add-lesson-button" placeholder="Добавить урок"/>
             </form>
         </div>
     </div>

@@ -8,29 +8,7 @@
             <h1>Ваши курсы</h1>
 
             <div class="settings-course-list">
-                <div class="your-course-card">
-                    <img src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg" class="img-your-course"/>
-                    <div class="your-course-card-info-wrapper">
-                        <div>
-                            <h2>
-                                coursename
-                            </h2>
-                            <p>
-                                description
-                            </p>
-                        </div>
-                        <div>
-
-                            <a asp-area="" asp-controller="Course" asp-action="Course"  class="medium-button orange-button">
-                                Просмотреть курс
-                            </a>
-                            <button class="medium-button border-button">
-                                Изменить курс
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
+                <a asp-area="" asp-controller="CourseSettings" asp-action="CreateCourse">Cоздать курс</a>
                 <div class="your-course-card">
                     <img src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg" class="img-your-course"/>
                     <div class="your-course-card-info-wrapper">
@@ -90,7 +68,30 @@
                         </div>
                         <div>
 
-                            <a asp-area="" asp-controller="Course" asp-action="Course"  class="medium-button orange-button">
+                            <a asp-area="" asp-controller="Course" asp-action="Course" class="medium-button orange-button">
+                                Просмотреть курс
+                            </a>
+                            <button class="medium-button border-button">
+                                Изменить курс
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="your-course-card">
+                    <img src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg" class="img-your-course"/>
+                    <div class="your-course-card-info-wrapper">
+                        <div>
+                            <h2>
+                                coursename
+                            </h2>
+                            <p>
+                                description
+                            </p>
+                        </div>
+                        <div>
+
+                            <a asp-area="" asp-controller="Course" asp-action="Course" class="medium-button orange-button">
                                 Просмотреть курс
                             </a>
                             <button class="medium-button border-button">

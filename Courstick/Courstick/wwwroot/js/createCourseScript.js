@@ -15,12 +15,15 @@ let removeButtons;
 
 function closeModal() {
     modal.style.display = "none";
-    createModal.style.display = 'none';
+    createModal.style.display = "none";
 }
 
+
 function openModal(modalType) {
-    if (modalType == 'create') {
+    if (modalType === 'create') {
+        console.log('modal opened');
         createModal.style.display = 'block';
+        console.log(createModal);
     } else {
         modal.style.display = 'block';
     }
@@ -56,8 +59,10 @@ createInfoButton.addEventListener('click', () => {
 })
 
 function removeItem(item) {
+    console.log(item);
     item.remove();
 }
+let mainNumber;
 
 document.addEventListener('click', (item) => {
     let number = item.path[0].id.slice(-1);
@@ -65,25 +70,24 @@ document.addEventListener('click', (item) => {
         item.path[0].removeEventListener('click', removeItem(item.path[2]));
         lessonsList.splice(number, 1);
     }
-
     if (item.path[0].id.includes('change-button')) {
-        item.path[0].removeEventListener('click', openChangeModal(number));
+        openModal('create');
+        mainNumber = number;
+        lessonSubmit.addEventListener('click', changeLesson);
     }
 })
 
-function openChangeModal(number) {
-    openModal('create');
-    lessonSubmit.addEventListener('click', changeLesson(number), true);
-}
-
-function changeLesson(number) {
+function changeLesson() {
+    console.log('click');
     const value = lessonInput.value;
-    const id = `lesson-info-${number}`;
+    const id = `lesson-info-${mainNumber}`;
     const info = document.getElementById(id);
-    lessonsList[number].content = value.toString();
-    info.innerText = lessonsList[number].content;
-    closeModal();
+    lessonsList[mainNumber].content = value.toString();
+    info.innerText = lessonsList[mainNumber].content;
+    console.log(lessonsList);
     lessonInput.value = '';
+    createModal.style.display = "none";
+    
 }
 
 createButton.addEventListener('click', () => {
@@ -95,3 +99,5 @@ window.onclick = function (event) {
         closeModal();
     }
 }
+
+

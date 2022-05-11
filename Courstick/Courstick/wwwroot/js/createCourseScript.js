@@ -7,6 +7,13 @@ const lessonsListHtml = document.querySelector('.lessons');
 const lessonInput = document.getElementById('lesson-text-input');
 const lessonSubmit = document.getElementById('lessonSubmit');
 let nodes = Array.prototype.slice.call(lessonsListHtml.children);
+const courseName = document.getElementById('courseName');
+const smallDesc = document.getElementById('smallDesc');
+const bigDesc = document.getElementById('bigDesc');
+const image = document.getElementById('img');
+const price = document.getElementById('price');
+
+const addCourseButton = document.getElementById('add_course');
 
 const lessonsList = [];
 
@@ -36,7 +43,7 @@ createInfoButton.addEventListener('click', () => {
     } else {
         lessonsList.push({
             type: 'info',
-            content: lessonsList.length
+            text: lessonsList.length
         })
         lessonsListHtml.insertAdjacentHTML('beforeend', `<div id=${lessonsList.length - 1} class="lesson-container">\n` +
             '                        <div class="lesson_info_container">\n' +
@@ -99,5 +106,46 @@ window.onclick = function (event) {
         closeModal();
     }
 }
+
+function createCourse(item) {
+    item.preventDefault();
+    
+    const data = {
+        Name: courseName.value,
+        Description: bigDesc.value,
+        SmallDescription: smallDesc.value,
+        Price: price.value,
+        Type: 1
+    };
+    console.log(data);
+    $.ajax({
+        url: '/CourseSettings/CreateCourse',
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        datatype: "json",
+        success: (e) => {
+            const lessons = {
+                CourseId: e.data,
+                Lessons: lessonsList
+            };
+            $.ajax({
+                url: '/CourseSettings/CreateLessons',
+                contentType: 'application/json',
+                datatype: "json",
+                type: 'POST',
+                data: JSON.stringify(lessons),
+                success: (r) => {
+                    alert(r.data)
+                }
+            })
+        },
+        error: (e) => {
+            console.log(e);
+        }
+    });
+}
+
+addCourseButton.addEventListener('click', (item) => createCourse(item));
 
 

@@ -11,10 +11,8 @@ namespace Courstick.Views.Auth
         [DataType(DataType.Password)]
         public string Password { get; set; }
         public string Login { get; set; }
+        
 
-        [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Пароль введен неверно")]
-        public string ConfirmPassword { get; set; }
     }
 }
 

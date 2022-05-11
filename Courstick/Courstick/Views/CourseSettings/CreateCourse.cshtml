@@ -11,7 +11,7 @@
 <div class="main_block_colored">
     <div class="main_container">
         <div class="add-course-first-block">
-            <form asp-action="CreateCourse" asp-controller="CourseSettings" method="post">
+            <form>
                 <div class="course-image-wrapper">
                     <div class="course-image-container">
                         <img src="" class="course-image"/>
@@ -26,20 +26,20 @@
                         <h1>
                             Название курса
                         </h1>
-                        <input type="text" asp-for="Name" class="input-label"/>
+                        <input type="text" required id="courseName" asp-for="Name" class="input-label"/>
                     </label>
                     <div class="inputs_container">
                         <label>
                             <h1 class="description-title">
                                 Краткое описание
                             </h1>
-                            <input asp-for="SmallDescription" required class="input-label input-desc"/>
+                            <input asp-for="SmallDescription" required id="smallDesc" required class="input-label input-desc"/>
                         </label>
                         <label>
                             <h1 class="description-title">
                                 Описание
                             </h1>
-                            <textarea required placeholder="Описание" asp-for="Description" class="input-label input-desc"></textarea>
+                            <textarea required placeholder="Описание" required id="bigDesc" asp-for="Description" class="input-label input-desc"></textarea>
                         </label>
                     </div>
 
@@ -47,10 +47,10 @@
                         <h1 class="description-title">
                             Цена
                         </h1>
-                        <input type="number" min="1" asp-for="Price" required class="input-label input-desc"/>
+                        <input placeholder="Цена в рублях" type="number" min="1" id="price"  asp-for="Price" required class="input-label input-desc"/>
                     </label>
                 </div>
-                <input placeholder="Цена в рублях" id="login-submit" type="submit" class="orange-button big-button add-lesson-button" placeholder="Добавить урок"/>
+                <input id="add_course" type="submit" class="orange-button big-button add-lesson-button" value="Добавить урок"/>
             </form>
         </div>
     </div>

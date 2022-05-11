@@ -32,32 +32,31 @@ public class AuthController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Registration(RegisterModel model) 
+    public async Task<IActionResult> Registration([FromBody]RegisterModel model)
     {
-        
-        if (!ModelState.IsValid)
+        if (await userManager.FindByEmailAsync(model.Email) == null && await userManager.FindByEmailAsync(model.Login) == null)
         {
-            return View();
+            var user = new User { Email = model.Email, UserName = model.Login};
+            var result = await userManager.CreateAsync(user, model.Password);
+            await userManager.AddToRoleAsync(user, "defaultUser");
+            
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                    ModelState.AddModelError(string.Empty, error.Description);
+
+                return BadRequest("Что-то пошло не так");
+            }
+            
+            await userManager.UpdateAsync(user);
+
+            await signInManager.SignInAsync(user, isPersistent: false);
+            return Ok("Пользователь успешно зарегистрирован");
         }
-
-
-        var user = new User { Email = model.Email, UserName = model.Login};
-        var result = await userManager.CreateAsync(user, model.Password);
-        await userManager.AddToRoleAsync(user, "defaultUser");
-
-        if (!result.Succeeded)
+        else
         {
-            foreach (var error in result.Errors)
-                ModelState.AddModelError(string.Empty, error.Description);
-
-            return View(model);
+            return BadRequest("Данный пользователь уже существует");
         }
-
-        await userManager.UpdateAsync(user);
-
-        await signInManager.SignInAsync(user, isPersistent: false);
-
-        return RedirectToAction("Index", "Home");
     }
 
     [HttpPost]

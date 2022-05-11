@@ -1,18 +1,23 @@
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const login = document.getElementById('login');
+const registrationBtn = document.getElementById('regbutton');
 const repPassword = document.getElementById('repeat_password');
 const validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const validRegexPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 const errorEmail = document.getElementById('email-error');
 const errorPassword = document.getElementById('pass-error')
 const errorRepPassword = document.getElementById('reppassword-error')
-let errorEmailFlag = false;
-let errorPassFlag = false;
-let errorRepeatFlag = false;
+const login = document.getElementById('login');
+const loginErrorRow = document.getElementById('login-error');
+const result = document.getElementById('result_row');
+let errorEmailFlag = true;
+let errorPassFlag = true;
+let errorRepeatFlag = true;
+let errorLogin = true;
 
 
 email.addEventListener('change', (e) => {
+    result.style.display = 'none';
     if(e.target.value.match(validRegexEmail)) {
         errorEmailFlag = false;
         email.style.border = '1px solid rgba(0, 11, 38, 0.16)';
@@ -25,6 +30,7 @@ email.addEventListener('change', (e) => {
 })
 
 password.addEventListener('change', (e) => {
+    result.style.display = 'none';
     if(e.target.value.match(validRegexPassword)) {
         errorPassFlag = false;
         password.style.border = '1px solid rgba(0, 11, 38, 0.16)'
@@ -38,28 +44,37 @@ password.addEventListener('change', (e) => {
     if(e.target.value === repPassword.value) {
         repPassword.style.border = '1px solid rgba(0, 11, 38, 0.16)'
         errorRepPassword.style.display = 'none';
+        errorRepeatFlag = false;
     }
 })
 
 
 repPassword.addEventListener('change', (e) => {
+    result.style.display = 'none';
     if(e.target.value !== password.value) {
         errorRepPassword.style.display = 'flex';
         repPassword.style.border = '1px solid red';
+        errorRepeatFlag = true;
     } else {
         repPassword.style.border = '1px solid rgba(0, 11, 38, 0.16)'
         errorRepPassword.style.display = 'none';
+        errorRepeatFlag = false;
+    }
+})
+    
+login.addEventListener('change', (e) => {
+    result.style.display = 'none';
+    if(e.target.value.length > 3) {
+        errorLogin = false;
+        login.style.border = '1px solid rgba(0, 11, 38, 0.16)';
+        loginErrorRow.style.display = 'none';
+    } else {
+        errorLogin = true;
+        login.style.border = '1px solid red';
+        loginErrorRow.style.display = 'flex';
     }
 })
 
-function loginSubmit() {
-    const data =  JSON.stringify({
-        'login': login.value,
-        'password': password.value,
-        'isRemember': false
-    });
-    return data;
-}
 
 function setErrors(err) {
     login.style.border = '1px solid red';
@@ -74,9 +89,46 @@ function removeErrors() {
     errorPassword.style.display = 'none';
 }
 
-login.addEventListener('click', () => {
-    removeErrors();
+const successReg = (res) => {
+    console.log(res);
+    result.style.color = '#4BB543';
+    result.style.display = 'flex';
+    result.innerText = res;
+    
+}
+
+const failedReg = (err) => {
+    console.log(err);
+    result.innerText = err.responseText;
+    result.style.color = 'red';
+    result.style.display = 'flex';
+}
+
+registrationBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if(!errorEmailFlag && !errorRepeatFlag && !errorPassFlag && !errorLogin) {
+        const data = {
+            Email: email.value,
+            Password: password.value,
+            Login: login.value
+        }
+        $.ajax({
+            url: '/Auth/Registration',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: (res) => {
+                successReg(res);
+            },
+            error: (er) => {
+                failedReg(er);
+            }
+        })
+    } else {
+        alert('Заполните все поля');
+    }
 })
+
 
     // $.ajax({
     //     url: '/Auth/Authorization',

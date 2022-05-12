@@ -33,12 +33,17 @@ public class CourseSettingsController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateCourse(CreateCourseModel model)
+    public async Task<IActionResult> CreateCourse([FromBody]CreateCourseModel model)
     {
         //if (!ModelState.IsValid)
         //{
         //    return View();
         //}
+
+        if (model == null)
+        {
+            return BadRequest("error");
+        }
 
         var user = await _userManager.FindByIdAsync(userId);
 
@@ -49,7 +54,8 @@ public class CourseSettingsController : Controller
             SmallDescription = model.SmallDescription,
             Image = new byte[]{1},
             Price = model.Price,
-            Author = new List<User> {user}
+            Author = new List<User> {user},
+            Rating = 0
             
         };
 
@@ -61,7 +67,7 @@ public class CourseSettingsController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateLessons(CourseDto courseDto)
+    public async Task<IActionResult> CreateLessons([FromBody]CourseDto courseDto)
     {
         var thatCourse = await appContext.Courses
             .Include(c => c.Page)

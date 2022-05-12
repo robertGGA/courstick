@@ -2,7 +2,7 @@
 
 namespace Courstick.Dto
 {
-    public class CreateCourseModel
+    public class CreateCourseDto
     {
         public string Name { get; set; }
         

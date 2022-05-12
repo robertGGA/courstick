@@ -6,7 +6,7 @@
 <div class="main_block_colored">
     <div class="main_container">
         <div class="add-course-first-block">
-            <form>
+            <form method="post" asp-action="EditCourse" enctype="multipart/form-data">
                 <div>
                     <h1>Изменение курса</h1>
                 </div>
@@ -16,39 +16,31 @@
                     </div>
                     <div class="upload-image-form">
                         <label class="upload-image-form-label" for="img">Выберите обложку для курса</label>
-                        <input class="" type="file" asp-for="Image" id="img" name="img" accept="image/*">
+                        <input type="file" asp-for="Image" id="img" name="img" accept="image/*">
                     </div>
                 </div>
                 <div class="course-image-wrapper">
                     <label>
-                        <h1>
-                            Название курса
-                        </h1>
-                        <input type="text" required id="courseName" asp-for="Name" class="input-label"/>
+                        <h1>Название курса</h1>
+                        <input type="text" placeholder="Название курса" required id="courseName" asp-for="Name" class="input-label" value="@Model.Name"/>
                     </label>
                     <div class="inputs_container">
                         <label>
-                            <h1 class="description-title">
-                                Краткое описание
-                            </h1>
-                            <input asp-for="SmallDescription" required id="smallDesc" required class="input-label input-desc"/>
+                            <h1 class="description-title">Краткое описание</h1>
+                            <input asp-for="SmallDescription" placeholder="Краткое описание" required id="smallDesc" required class="input-label input-desc" value="@Model.SmallDescription"/>
                         </label>
                         <label>
-                            <h1 class="description-title">
-                                Описание
-                            </h1>
-                            <textarea required placeholder="Описание" required id="bigDesc" asp-for="Description" class="input-label input-desc"></textarea>
+                            <h1 class="description-title">Описание</h1>
+                            <textarea required placeholder="Полное описание" required id="bigDesc" asp-for="Description" class="input-label input-desc" value="@Model.Description"></textarea>
                         </label>
                     </div>
 
                     <label>
-                        <h1 class="description-title">
-                            Цена
-                        </h1>
-                        <input placeholder="Цена в рублях" type="number" min="1" id="price" asp-for="Price" required class="input-label input-desc"/>
+                        <h1 class="description-title">Цена</h1>
+                        <input placeholder="Цена в рублях" type="number" min="1" id="price" asp-for="Price" value="@Model.Price" required class="input-label"/>
                     </label>
                 </div>
-                <input id="add_course" type="submit" class="orange-button big-button add-lesson-button" value="Сохранить"/>
+                <input type="submit" id="add_course" class="orange-button big-button add-lesson-button" value="Сохранить"/>
             </form>
         </div>
     </div>

@@ -6,7 +6,7 @@ using System.Security.Claims;
 using Courstick.Dto;
 using Courstick.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using CreateCourseModel = Courstick.Dto.CreateCourseModel;
+using CreateCourseModel = Courstick.Dto.CreateCourseDto;
 
 namespace Courstick.Controllers;
 
@@ -36,7 +36,7 @@ public class CourseSettingsController : Controller
             .Include(c => c.Users)
             .Where(c => c.Author.Contains(user));
         
-        var model = new YourCourseModel
+        var model = new YourCourseDto
         {
             Courses = courses
         };
@@ -44,14 +44,36 @@ public class CourseSettingsController : Controller
         return View(model);
     }
     
-    public IActionResult EditCourse()
+    public async Task<IActionResult> EditCourse(int id)
     {
-        return View();
+        var course = await appContext.Courses.FirstOrDefaultAsync(a => a.CourseId == id);
+        
+        if (course is null)
+        {
+            return NotFound();
+        }
+        
+        var model = new EditCourseDto()
+        {
+            Description = course.Description,
+            Image = course.Image,
+            Name = course.Name,
+            Price = course.Price,
+            SmallDescription = course.SmallDescription
+        };
+        return View(model);
     }
 
     [HttpPost]
     public async Task<IActionResult> EditCourse([FromBody] EditCourseDto model)
     {
+        if (model == null)
+        {
+            return BadRequest("error");
+        }
+        
+        var user = await _userManager.FindByIdAsync(userId);
+        
         var course = new Course
         {
             Name = model.Name,
@@ -59,15 +81,14 @@ public class CourseSettingsController : Controller
             SmallDescription = model.SmallDescription,
             Image = new byte[]{1},
             Price = model.Price,
-            //Author = new List<User> {user},
+            Author = new List<User> {user},
             Rating = 0
-            
         };
 
-        var updatedCourse = await appContext.Courses.AddAsync(course);
-        
+        appContext.Courses.Update(course);
         await appContext.SaveChangesAsync();
-        return Json(updatedCourse.Entity.CourseId);
+        
+        return View(model);
     }
     
     [HttpPost]
@@ -94,7 +115,6 @@ public class CourseSettingsController : Controller
             Price = model.Price,
             Author = new List<User> {user},
             Rating = 0
-            
         };
 
         var updatedCourse = await appContext.Courses.AddAsync(course);

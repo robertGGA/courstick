@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Courstick.Views.Profile;
 using System.ComponentModel.DataAnnotations;
 
-public class UserInfoModel
+public class UserInfoDto
 {
     public string Login { get; set; }
     public string Email { get; set; }

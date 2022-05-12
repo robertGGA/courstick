@@ -2,7 +2,7 @@
 
 namespace Courstick.Views.CourseSettings
 {
-    public class YourCourseModel
+    public class YourCourseDto
     {
         public IEnumerable<Course> Courses { get; set; }
     }

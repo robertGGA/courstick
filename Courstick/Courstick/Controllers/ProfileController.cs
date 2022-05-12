@@ -33,7 +33,7 @@ public class ProfileController : Controller
     }
     
     [HttpPost]
-    public async Task<IActionResult> ChangeInfo([FromBody]UserInfoModel model)
+    public async Task<IActionResult> ChangeInfo([FromBody]UserInfoDto model)
     {
         if (model.Image == null && model.Email == null && model.Password == null && model.Login == null) 
         {

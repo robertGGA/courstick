@@ -22,3 +22,15 @@ C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick.
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\refint\Courstick.Core.dll
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\Courstick.Core.pdb
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\ref\Courstick.Core.dll
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\bin\Debug\net6.0\Courstick.Core.deps.json
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\bin\Debug\net6.0\Courstick.Core.dll
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\bin\Debug\net6.0\ref\Courstick.Core.dll
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\bin\Debug\net6.0\Courstick.Core.pdb
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\Courstick.Core.csproj.AssemblyReference.cache
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\Courstick.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\Courstick.Core.AssemblyInfoInputs.cache
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\Courstick.Core.AssemblyInfo.cs
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\Courstick.Core.csproj.CoreCompileInputs.cache
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\Courstick.Core.dll
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\ref\Courstick.Core.dll
+C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick.Core\obj\Debug\net6.0\Courstick.Core.pdb

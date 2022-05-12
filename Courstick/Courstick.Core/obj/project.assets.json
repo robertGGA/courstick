@@ -1599,24 +1599,31 @@
     ]
   },
   "packageFolders": {
-    "/Users/gadelshinrr/.nuget/packages/": {}
+    "C:\\Users\\artem\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/Courstick.Core.csproj",
+      "projectUniqueName": "C:\\Users\\artem\\Desktop\\Repositories\\courstick\\Courstick\\Courstick.Core\\Courstick.Core.csproj",
       "projectName": "Courstick.Core",
-      "projectPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/Courstick.Core.csproj",
-      "packagesPath": "/Users/gadelshinrr/.nuget/packages/",
-      "outputPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/obj/",
+      "projectPath": "C:\\Users\\artem\\Desktop\\Repositories\\courstick\\Courstick\\Courstick.Core\\Courstick.Core.csproj",
+      "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\artem\\Desktop\\Repositories\\courstick\\Courstick\\Courstick.Core\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/gadelshinrr/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1663,7 +1670,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

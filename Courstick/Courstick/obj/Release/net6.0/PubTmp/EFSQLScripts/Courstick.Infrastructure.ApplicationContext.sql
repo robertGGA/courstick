@@ -588,3 +588,104 @@ BEGIN
 END $EF$;
 COMMIT;
 
+START TRANSACTION;
+
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220504202215_AddingCourse') THEN
+    ALTER TABLE "Courses" DROP CONSTRAINT "FK_Courses_Statuses_StatusId";
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220504202215_AddingCourse') THEN
+    ALTER TABLE "Courses" ALTER COLUMN "StatusId" DROP NOT NULL;
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220504202215_AddingCourse') THEN
+    ALTER TABLE "Courses" ALTER COLUMN "Rating" DROP NOT NULL;
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220504202215_AddingCourse') THEN
+    ALTER TABLE "Courses" ADD CONSTRAINT "FK_Courses_Statuses_StatusId" FOREIGN KEY ("StatusId") REFERENCES "Statuses" ("StatusId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220504202215_AddingCourse') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20220504202215_AddingCourse', '6.0.4');
+    END IF;
+END $EF$;
+COMMIT;
+
+START TRANSACTION;
+
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220506100605_AddingCourse v0.2') THEN
+    ALTER TABLE "Pages" DROP CONSTRAINT "FK_Pages_Comments_CommentId";
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220506100605_AddingCourse v0.2') THEN
+    ALTER TABLE "Pages" ALTER COLUMN "Text" DROP NOT NULL;
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220506100605_AddingCourse v0.2') THEN
+    ALTER TABLE "Pages" ALTER COLUMN "Movie" DROP NOT NULL;
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220506100605_AddingCourse v0.2') THEN
+    ALTER TABLE "Pages" ALTER COLUMN "Image" DROP NOT NULL;
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220506100605_AddingCourse v0.2') THEN
+    ALTER TABLE "Pages" ALTER COLUMN "CommentId" DROP NOT NULL;
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220506100605_AddingCourse v0.2') THEN
+    ALTER TABLE "Pages" ADD "Type" integer NOT NULL DEFAULT 0;
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220506100605_AddingCourse v0.2') THEN
+    ALTER TABLE "Pages" ADD CONSTRAINT "FK_Pages_Comments_CommentId" FOREIGN KEY ("CommentId") REFERENCES "Comments" ("CommentId");
+    END IF;
+END $EF$;
+
+DO $EF$
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM "__EFMigrationsHistory" WHERE "MigrationId" = '20220506100605_AddingCourse v0.2') THEN
+    INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+    VALUES ('20220506100605_AddingCourse v0.2', '6.0.4');
+    END IF;
+END $EF$;
+COMMIT;
+

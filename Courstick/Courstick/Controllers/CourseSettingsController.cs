@@ -6,6 +6,7 @@ using System.Security.Claims;
 using Courstick.Dto;
 using Courstick.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using CreateCourseModel = Courstick.Dto.CreateCourseModel;
 
 namespace Courstick.Controllers;
 
@@ -27,11 +28,48 @@ public class CourseSettingsController : Controller
         return View();
     }
 
-    public IActionResult YourCourses()
+    public async Task<IActionResult> YourCourses()
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+
+        var courses =  appContext.Courses
+            .Include(c => c.Users)
+            .Where(c => c.Author.Contains(user));
+        
+        var model = new YourCourseModel
+        {
+            Courses = courses
+        };
+        
+        return View(model);
+    }
+    
+    public IActionResult EditCourse()
     {
         return View();
     }
 
+    [HttpPost]
+    public async Task<IActionResult> EditCourse([FromBody] EditCourseDto model)
+    {
+        var course = new Course
+        {
+            Name = model.Name,
+            Description = model.Description,
+            SmallDescription = model.SmallDescription,
+            Image = new byte[]{1},
+            Price = model.Price,
+            //Author = new List<User> {user},
+            Rating = 0
+            
+        };
+
+        var updatedCourse = await appContext.Courses.AddAsync(course);
+        
+        await appContext.SaveChangesAsync();
+        return Json(updatedCourse.Entity.CourseId);
+    }
+    
     [HttpPost]
     public async Task<IActionResult> CreateCourse([FromBody]CreateCourseModel model)
     {

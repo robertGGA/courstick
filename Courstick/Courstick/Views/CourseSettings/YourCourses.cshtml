@@ -25,7 +25,7 @@
                                     </p>
                                 </div>
                                 <div class="mt-4">
-                                    <a asp-area="" asp-controller="Course" asp-action="Course" class="medium-button orange-button">
+                                    <a asp-area="" asp-route-id="@course.CourseId" asp-controller="Course" asp-action="Course" class="medium-button orange-button">
                                         Просмотреть курс
                                     </a>
                                     <a asp-area="" asp-route-id="@course.CourseId" asp-controller="CourseSettings" asp-action="EditCourse" class="medium-button border-button m-lg-3">

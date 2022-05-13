@@ -1,5 +1,4 @@
 using Courstick.Core.Models;
-using Courstick.Views.CourseSettings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -35,13 +34,18 @@ public class CourseSettingsController : Controller
         var courses =  _appContext.Courses
             .Include(c => c.Users)
             .Where(c => c.Author.Contains(user));
-        
-        var model = new YourCourseDto
+
+        var courseList = courses.Select(course => new CourseDto()
         {
-            Courses = courses
-        };
+            Author = new AuthorDto(course.Author.First()),
+            Description = course.Description,
+            Name = course.Name,
+            Price = course.Price,
+            SmallDescription = course.SmallDescription,
+            CourseId = course.CourseId
+        });
         
-        return View(model);
+        return View(courseList);
     }
     
     public async Task<IActionResult> EditCourse(int id)
@@ -145,5 +149,21 @@ public class CourseSettingsController : Controller
         await _appContext.SaveChangesAsync();
 
         return Ok();
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> DeleteCourse(int id)
+    {
+        var courseForDelete = await _appContext.Courses.FirstOrDefaultAsync(c => c.CourseId == id);
+        
+        if (courseForDelete is null)
+        {
+            return BadRequest("error");
+        }
+
+        _appContext.Courses.Remove(courseForDelete);
+        await _appContext.SaveChangesAsync();
+
+        return RedirectToAction("YourCourses");
     }
 }

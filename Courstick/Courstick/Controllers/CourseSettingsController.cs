@@ -53,10 +53,10 @@ public class CourseSettingsController : Controller
             return NotFound();
         }
         
-        var model = new EditCourseDto()
+        var model = new EditCourseDto
         {
+            Id = id,
             Description = course.Description,
-            Image = course.Image,
             Name = course.Name,
             Price = course.Price,
             SmallDescription = course.SmallDescription
@@ -65,26 +65,27 @@ public class CourseSettingsController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> EditCourse([FromBody] EditCourseDto model)
+    public async Task<IActionResult> EditCourse(EditCourseDto model)
     {
-        if (model == null)
+        if (model is null)
         {
             return BadRequest("error");
         }
-        
-        var user = await _userManager.FindByIdAsync(userId);
-        
-        var course = new Course
-        {
-            Name = model.Name,
-            Description = model.Description,
-            SmallDescription = model.SmallDescription,
-            Image = new byte[]{1},
-            Price = model.Price,
-            Author = new List<User> {user},
-            Rating = 0
-        };
 
+        var course = await appContext.Courses.FirstOrDefaultAsync(c => c.CourseId == model.Id);
+        
+        if (course is null)
+        {
+            return BadRequest("error");
+        }
+
+        course.Name = model.Name;
+        course.Description = model.Description;
+        course.SmallDescription = model.SmallDescription;
+        course.Image = new byte[] {1};
+        course.Price = model.Price;
+        course.Rating = 0;
+            
         appContext.Courses.Update(course);
         await appContext.SaveChangesAsync();
         

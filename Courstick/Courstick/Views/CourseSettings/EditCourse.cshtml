@@ -6,7 +6,7 @@
 <div class="main_block_colored">
     <div class="main_container">
         <div class="add-course-first-block">
-            <form method="post" asp-action="EditCourse" enctype="multipart/form-data">
+            <form method="post" asp-action="EditCourse">
                 <div>
                     <h1>Изменение курса</h1>
                 </div>
@@ -22,22 +22,23 @@
                 <div class="course-image-wrapper">
                     <label>
                         <h1>Название курса</h1>
-                        <input type="text" placeholder="Название курса" required id="courseName" asp-for="Name" class="input-label" value="@Model.Name"/>
+                        <input type="text" placeholder="Название курса" required id="courseName" asp-for="Name" class="input-label"/>
                     </label>
                     <div class="inputs_container">
                         <label>
                             <h1 class="description-title">Краткое описание</h1>
-                            <input asp-for="SmallDescription" placeholder="Краткое описание" required id="smallDesc" required class="input-label input-desc" value="@Model.SmallDescription"/>
+                            <input asp-for="SmallDescription" placeholder="Краткое описание" required id="smallDesc" required class="input-label input-desc"/>
                         </label>
                         <label>
                             <h1 class="description-title">Описание</h1>
-                            <textarea required placeholder="Полное описание" required id="bigDesc" asp-for="Description" class="input-label input-desc" value="@Model.Description"></textarea>
+                            <textarea required placeholder="Полное описание" required id="bigDesc" asp-for="Description" class="input-label input-desc"></textarea>
                         </label>
                     </div>
 
                     <label>
                         <h1 class="description-title">Цена</h1>
-                        <input placeholder="Цена в рублях" type="number" min="1" id="price" asp-for="Price" value="@Model.Price" required class="input-label"/>
+                        <input placeholder="Цена в рублях" type="number" min="1" id="price" asp-for="Price" required class="input-label input-desc"/>
+                        <input type="hidden" asp-for="Id"/>
                     </label>
                 </div>
                 <input type="submit" id="add_course" class="orange-button big-button add-lesson-button" value="Сохранить"/>

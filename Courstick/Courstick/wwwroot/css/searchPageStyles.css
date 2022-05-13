@@ -52,10 +52,11 @@ header {
 }
 
 .courses-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 390px);
+    grid-column-gap: 15px;
+    grid-row-gap: 1em;
+    justify-content: center;
 }
 
 .load-more-button {
@@ -67,4 +68,16 @@ header {
 
 .active_tab {
     border: 1px solid #F75E05;
+}
+
+@media screen and (max-width: 800px) {
+    .filters-container {
+        flex-direction: column;
+    }
+    
+    .input-search {
+        width: 70%;
+        margin-top: 30px;
+    }
+    
 }

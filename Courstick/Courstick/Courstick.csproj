@@ -38,8 +38,4 @@
     <ProjectReference Include="..\Infrastructure\Courstick.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helpers" />
-  </ItemGroup>
-
 </Project>

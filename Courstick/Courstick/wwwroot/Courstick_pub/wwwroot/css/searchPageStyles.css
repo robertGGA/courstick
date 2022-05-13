@@ -52,10 +52,11 @@ header {
 }
 
 .courses-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 390px);
+    grid-column-gap: 15px;
+    grid-row-gap: 1em;
+    justify-content: center;
 }
 
 .load-more-button {

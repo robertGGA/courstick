@@ -65,7 +65,7 @@ function loginSubmit() {
 function setErrors(err) {
     login.style.border = '1px solid red';
     password.style.border = '1px solid red'
-    errorPassword.innerText = err.responseJSON.message;
+    errorPassword.innerText = 'Неправильный логин или пароль';
     errorPassword.style.display = 'flex';
 }
 

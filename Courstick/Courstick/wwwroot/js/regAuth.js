@@ -99,7 +99,7 @@ const successReg = (res) => {
 
 const failedReg = (err) => {
     console.log(err);
-    result.innerText = err.responseText;
+    result.innerText = "Данный пользователь уже существует";
     result.style.color = 'red';
     result.style.display = 'flex';
 }

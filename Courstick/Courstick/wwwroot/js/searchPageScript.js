@@ -4,15 +4,22 @@ const filters = document.getElementsByClassName('tab');
 let active;
 const divyArray = Array.from(filters);
 
-async function getCourses(row) {
-    return axios.get('urlhere', {
-        params: {
-            r: row
-        }
-    }).then((r) => {
-        console.log(r)
+window.addEventListener('load', () => {
+    getCourses().then((r) => {
+       console.log(r);
     }).catch((e) => {
         console.log(e);
+    })
+})
+
+async function getCourses() {
+    return $.ajax({
+        url: '/Search/GetCourses',
+        type: 'GET',
+        success: (r) => {
+            console.log('works');
+            return r;
+        }
     })
 }
 
@@ -37,7 +44,6 @@ divyArray.forEach((item) => {
 
     })
 });
-
 
 search.addEventListener('change', async (e) => {
     setTimeout(await getCourses(e.target.value), 2000);

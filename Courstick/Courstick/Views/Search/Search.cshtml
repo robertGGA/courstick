@@ -1,9 +1,12 @@
+@using Courstick.Dto
 @{
     ViewData["Title"] = "Поиск";
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/searchPageStyles.css" xmlns="http://www.w3.org/1999/html">    
+    <link rel="stylesheet" href="~/css/searchPageStyles.css" xmlns="http://www.w3.org/1999/html">  
+    <link rel="stylesheet" href="~/css/uiStyles/cardStyles/cardStyles.css"/>
+    <link rel="stylesheet" href="~/css/uiStyles/cardStyles/previewCardStyles.css" xmlns="http://www.w3.org/1999/html">  
 }
 
 <div class="main_block_white">
@@ -39,12 +42,10 @@
                 </div>
                 
                 <div class="courses-list">
-                    @Html.Partial("Partials/_Card", null)
-                    @Html.Partial("Partials/_Card", null)
-                    @Html.Partial("Partials/_Card", null)
-                    @Html.Partial("Partials/_Card", null)
-                    @Html.Partial("Partials/_Card", null)
-                    @Html.Partial("Partials/_Card", null)
+                @foreach(CourseInfoDto course in Model)
+                {
+                    @Html.Partial("Partials/_Card", course)
+                }
                 </div>
             </div>
             <button class="load-more-button">

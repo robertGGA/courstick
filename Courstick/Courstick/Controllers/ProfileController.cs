@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Courstick.Core.Models;
+using Courstick.Infrastructure;
 using Courstick.Views.Profile;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
@@ -11,12 +12,15 @@ public class ProfileController : Controller
 {
     private readonly Microsoft.AspNetCore.Identity.UserManager<User> userManager;
     private readonly SignInManager<User> signInManager;
+    private readonly ApplicationContext appContext;
 
-    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager, SignInManager<User> _signInManager)
+    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager, SignInManager<User> _signInManager, ApplicationContext appContext)
     {
         userManager = _userManager;
         signInManager = _signInManager;
     }
+    
+    
     [Authorize]
     public async Task<IActionResult> Profile()
     {
@@ -69,5 +73,13 @@ public class ProfileController : Controller
         await signInManager.SignOutAsync();
         HttpContext.Session.Remove("login");
         return Redirect("/");
+    }
+
+    [HttpGet]
+
+    public async Task<IActionResult> GetUserCourses()
+    {
+        var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
+        return Json("");
     }
 }

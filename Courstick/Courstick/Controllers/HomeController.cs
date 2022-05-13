@@ -17,12 +17,6 @@ namespace Courstick.Controllers
         {
             return View();
         }
-        
-
-        public IActionResult Search()
-        {
-            return View();
-        }
 
         public IActionResult About()
         {

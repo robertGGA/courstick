@@ -66,6 +66,10 @@
     color: #FF4242;
 }
 
+.price:after {
+    content: "\20BD";
+}
+
 .card-author-block {
     border-left: 1px solid #787A80;
     color: #787A80;

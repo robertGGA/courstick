@@ -9,5 +9,5 @@ namespace Courstick.Controllers;
 public class CourseController : Controller
 {
     [HttpGet]
-    public IActionResult Course() => View();
+    public IActionResult Course(int id) => View();
 }

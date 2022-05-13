@@ -35,3 +35,8 @@
     border: 1px solid black;
     border-left: none;
 }
+
+.delete-btn{
+    color: #ff0000;
+    border: none;
+}

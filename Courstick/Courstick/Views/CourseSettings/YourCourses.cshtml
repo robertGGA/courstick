@@ -1,4 +1,4 @@
-@model Courstick.Views.CourseSettings.YourCourseDto
+@model IEnumerable<Courstick.Dto.CourseDto>
 
 @{
     ViewData["Title"] = "Ваши курсы";
@@ -11,19 +11,23 @@
 
             <div class="settings-course-list">
                 <a asp-area="" asp-controller="CourseSettings" asp-action="CreateCourse">Cоздать курс</a>
-                @foreach (var course in Model.Courses)
+                @foreach (var course in Model)
                     {
                         <div class="your-course-card">
                             <img src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg" class="img-your-course"/>
                             <div class="your-course-card-info-wrapper">
-                                <div>
-                                    <h2>
-                                        @course.Name
-                                    </h2>
-                                    <p>
-                                        @course.SmallDescription
-                                    </p>
+                                <div class="row w-100 justify-content-between">
+                                    <h2 class="col-auto">@course.Name</h2>
+                                    <form method="post" class="col-auto">
+                                        <input type="hidden" name="id" value="@course.CourseId"/>
+                                        <button asp-controller="CourseSettings" asp-action="DeleteCourse" class="delete-btn">
+                                            <i class="fa-solid fa-trash-can fa-xl"></i>
+                                        </button>
+                                    </form>
                                 </div>
+                                <p>
+                                    @course.SmallDescription
+                                </p>
                                 <div class="mt-4">
                                     <a asp-area="" asp-route-id="@course.CourseId" asp-controller="Course" asp-action="Course" class="medium-button orange-button">
                                         Просмотреть курс

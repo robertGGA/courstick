@@ -14,12 +14,12 @@ public class CourseSettingsController : Controller
 {
     private readonly string userId;
     private readonly UserManager<User> _userManager;
-    private readonly ApplicationContext appContext;
+    private readonly ApplicationContext _appContext;
     public CourseSettingsController(IHttpContextAccessor httpContextAccessor, UserManager<User> userManager, ApplicationContext appContext)
     {
         
         _userManager = userManager;
-        this.appContext = appContext;
+        _appContext = appContext;
         userId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
     }
     // GET
@@ -32,7 +32,7 @@ public class CourseSettingsController : Controller
     {
         var user = await _userManager.FindByIdAsync(userId);
 
-        var courses =  appContext.Courses
+        var courses =  _appContext.Courses
             .Include(c => c.Users)
             .Where(c => c.Author.Contains(user));
         
@@ -46,7 +46,7 @@ public class CourseSettingsController : Controller
     
     public async Task<IActionResult> EditCourse(int id)
     {
-        var course = await appContext.Courses.FirstOrDefaultAsync(a => a.CourseId == id);
+        var course = await _appContext.Courses.FirstOrDefaultAsync(a => a.CourseId == id);
         
         if (course is null)
         {
@@ -72,7 +72,7 @@ public class CourseSettingsController : Controller
             return BadRequest("error");
         }
 
-        var course = await appContext.Courses.FirstOrDefaultAsync(c => c.CourseId == model.Id);
+        var course = await _appContext.Courses.FirstOrDefaultAsync(c => c.CourseId == model.Id);
         
         if (course is null)
         {
@@ -86,8 +86,8 @@ public class CourseSettingsController : Controller
         course.Price = model.Price;
         course.Rating = 0;
             
-        appContext.Courses.Update(course);
-        await appContext.SaveChangesAsync();
+        _appContext.Courses.Update(course);
+        await _appContext.SaveChangesAsync();
         
         return View(model);
     }
@@ -118,9 +118,9 @@ public class CourseSettingsController : Controller
             Rating = 0
         };
 
-        var updatedCourse = await appContext.Courses.AddAsync(course);
+        var updatedCourse = await _appContext.Courses.AddAsync(course);
         
-        await appContext.SaveChangesAsync();
+        await _appContext.SaveChangesAsync();
 
         return Json(updatedCourse.Entity.CourseId);
     }
@@ -128,7 +128,7 @@ public class CourseSettingsController : Controller
     [HttpPost]
     public async Task<IActionResult> CreateLessons([FromBody]CourseDto courseDto)
     {
-        var thatCourse = await appContext.Courses
+        var thatCourse = await _appContext.Courses
             .Include(c => c.Page)
             .FirstAsync(c => c.CourseId == courseDto.CourseId);
         foreach (var lesson in courseDto.Lessons)
@@ -142,7 +142,7 @@ public class CourseSettingsController : Controller
             });
         }
         
-        await appContext.SaveChangesAsync();
+        await _appContext.SaveChangesAsync();
 
         return Ok();
     }

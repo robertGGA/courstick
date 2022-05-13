@@ -1,3 +1,4 @@
+@model Courstick.Dto.CourseDto
 <link rel="stylesheet" href="~/css/uiStyles/modalStyles/defaultModalStyles.css"/>
 
 <div id="modal">
@@ -13,7 +14,7 @@
         </div>
 
         <h2>
-            1000$
+            @Model.Price ₽
         </h2>
         
         <button class="orange-button big-button">

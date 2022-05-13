@@ -1,8 +1,14 @@
+@model Courstick.Dto.CourseDto
+
+@{
+    ViewData["Title"] = Model?.Name;
+}
+
 <div class="main_block_colored">
     <div class="main_container">
         <div class="coursepage-title">
             <p class="subline-courses">Курс</p>
-            <h1 style="margin-top: 6px">CourseName</h1>
+            <h1 style="margin-top: 6px">@Model?.Name</h1>
         </div>
     </div>
 </div>
@@ -16,9 +22,7 @@
                         О курсе
                     </h1>
 
-                    <p class="course-description">
-                        Bibendum vulputate adipiscing venenatis at est, a eu tincidunt. Leo aenean congue in sagittis, felis maecenas amet varius at. Pellentesque euismod in faucibus at elementum. Tellus maecenas libero est tempus sit cras at malesuada diam. Consequat senectus dictumst non hac dignissim montes, pretium, egestas molestie. Sed magna aliquet ornare nibh vel lectus diam eget pretium. Lorem risus nunc tincidunt tortor, mi nulla pellentesque
-                    </p>
+                    <p class="course-description">@Model?.Description</p>
 
                     <h2 class="what-will-learn-label">
                         Что вы изучите?
@@ -58,7 +62,7 @@
                             Цена
                         </p>
                         <p class="buy-price">
-                            1$(100000 рублей)
+                            @Model?.Price ₽
                         </p>
                         <p class="buy-desc">
                             Metus turpis sit lorem lacus, in elit tellus lacus.
@@ -85,7 +89,7 @@
 
                 <div class="author-block-info">
                     <p class="subline-courses">Создатель курса</p>
-                    <h1 style="margin-top: 6px">AuthorName</h1>
+                    <h1 style="margin-top: 6px">Имя автора</h1>
                     <p class="small-author-description">Small author description</p>
                     <p class="author-description">
                         Mattis adipiscing aliquam eu proin metus a iaculis faucibus. Tempus curabitur venenatis, vulputate venenatis fermentum ante. Nisl, amet id semper semper quis commodo, consequat. Massa rhoncus sit morbi odio. Sit maecenas nibh consectetur vel diam. Sem vulputate molestie laoreet at massa sed pharetra. Ac commodo platea id habitasse proin. Nullam sit nec ipsum posuere non. Nam vel aliquam tristique sollicitudin interdum quam.

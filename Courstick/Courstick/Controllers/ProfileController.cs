@@ -1,4 +1,4 @@
-
+using System.Drawing;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Courstick.Core.Models;
@@ -6,6 +6,7 @@ using Courstick.Infrastructure;
 using Courstick.Views.Profile;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
+using System.Drawing;
 
 
 namespace Courstick.Controllers;
@@ -16,7 +17,8 @@ public class ProfileController : Controller
     private readonly SignInManager<User> signInManager;
     private readonly ApplicationContext appContext;
 
-    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager, SignInManager<User> _signInManager, ApplicationContext appContext)
+
+    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager, SignInManager<User> _signInManager)
     {
         userManager = _userManager;
         signInManager = _signInManager;
@@ -35,7 +37,7 @@ public class ProfileController : Controller
     }
     
     [HttpPost]
-    public async Task<IActionResult> ChangeInfo(UserInfoDto model)
+    public async Task<IActionResult> ChangeInfo(UserInfoModel model)
     {
         if (model.Image == null && model.Email == null && model.Password == null && model.Login == null) 
         {

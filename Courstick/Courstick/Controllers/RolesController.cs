@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Courstick.Core.Models;
 using Courstick.Views;
 using Courstick.Views.Roles;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -23,6 +24,7 @@ namespace Courstick.Controllers
             _userManager = userManager;
         }
 
+        [Authorize]
         public IActionResult Index() => View(_roleManager.Roles.ToList());
 
         public IActionResult Create() => View();

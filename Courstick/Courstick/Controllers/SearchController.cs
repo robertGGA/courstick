@@ -17,6 +17,7 @@ public class SearchController : Controller
         appContext = _appContext;
     }
     // GET
+    
     public IActionResult Search()
     {
         var courses = GetCourseList();

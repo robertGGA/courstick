@@ -35,3 +35,16 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+
+*.cache
+*.dll
+*.exe
+*.pdb
+/build/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+*.opensdf
+*.tlog
+*.log

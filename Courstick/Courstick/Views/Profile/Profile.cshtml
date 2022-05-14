@@ -14,11 +14,22 @@
 
             <div class="profile-content">
                 <div class="user-info-container">
-                    <img class="avatar-img" src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg" alt="avatar"/>
+                    @{
+                        if (!ViewBag.Image.Equals(""))
+                        {
+                            <img class="avatar-img" src="@ViewBag.Image" alt="avatar"/>
+
+                        }
+                        else
+                        {
+                            <img class="avatar-img" src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg" alt="avatar"/>
+
+                        }
+                    }
                     <div class="user-info">
                         <h2>@ViewBag.login</h2>
                         <form asp-action="LogOut" asp-controller="Profile" method="post">
-                              <button  type="submit" class="small-button border-button">Logout</button>
+                            <button type="submit" class="small-button border-button">Logout</button>
                         </form>
                     </div>
                 </div>

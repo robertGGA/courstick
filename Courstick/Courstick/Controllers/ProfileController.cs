@@ -1,3 +1,4 @@
+using System.Drawing;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Courstick.Core.Models;
@@ -5,6 +6,8 @@ using Courstick.Infrastructure;
 using Courstick.Views.Profile;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
+using System.Drawing;
+
 
 namespace Courstick.Controllers;
 
@@ -14,7 +17,8 @@ public class ProfileController : Controller
     private readonly SignInManager<User> signInManager;
     private readonly ApplicationContext appContext;
 
-    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager, SignInManager<User> _signInManager, ApplicationContext appContext)
+
+    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager, SignInManager<User> _signInManager)
     {
         userManager = _userManager;
         signInManager = _signInManager;
@@ -28,45 +32,61 @@ public class ProfileController : Controller
         Console.WriteLine(user);
         ViewBag.login = user.UserName;
         ViewBag.email = user.Email;
-        ViewBag.pic = user.Avatar;
+        ViewBag.Image = await GetImage();
         return View();
     }
     
     [HttpPost]
-    public async Task<IActionResult> ChangeInfo([FromBody]UserInfoDto model)
+    public async Task<IActionResult> ChangeInfo(UserInfoModel model)
     {
         if (model.Image == null && model.Email == null && model.Password == null && model.Login == null) 
         {
             return BadRequest("Форма пуста");
         }
         var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
-        String login = model.Login == "" ? user.UserName : model.Login;
-        String email = model.Email == "" ? user.Email : model.Email;
+        String login = model.Login == null ? user.UserName : model.Login;
+        String email = model.Email == null ? user.Email : model.Email;
 
-        if (model.Password != "")
+        if (model.Password != null)
         {
             user.PasswordHash = model.Password;
         }
 
         if (model.Image != null)
         {
-            Console.WriteLine(model.Image);
+            var bytes = await GetBytes(model.Image);
+            user.Avatar = bytes;
+
         }
         user.UserName = login;
         user.Email = email;
+        await userManager.UpdateAsync(user);
+        return RedirectToAction("Profile");
+    }
 
-        try
+    public static async Task<byte[]> GetBytes(IFormFile formFile)
+    {
+        await using var memoryStream = new MemoryStream();
+        await formFile.CopyToAsync(memoryStream);
+        return memoryStream.ToArray();
+    }
+
+    public async Task<String> GetImage()
+    {
+        var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
+        if (user.Avatar != null)
         {
-            await userManager.UpdateAsync(user);
+            var base64 = Convert.ToBase64String(user.Avatar);
+            var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+            return imgSrc;
         }
-        catch (Exception e)
+        else
         {
-            return BadRequest("Что-то пошло не так");
+            return "";
         }
-        
-        return Ok();
     }
     
+     
     [HttpPost]
     public async Task<IActionResult> LogOut()
     {

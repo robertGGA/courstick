@@ -104,37 +104,38 @@ fileInput.addEventListener('change', (item) => {
     image = fileInput.files[0];
 })
 
-submitButton.addEventListener('click', (item) => {
-    item.preventDefault();
-    if(changeEmailInput.value === '' && changePasswordInput.value === '' &&
-        changeLoginInput.value === '' && !fileInput.files[0]) {
-        alert('Заполните одно из полей')
-    } else {
-        if(!passwordFlag && !emailFlag) {
-            // fdata.append('Login', changeLoginInput.value);
-            // fdata.append('Password', changePasswordInput.value);
-            // fdata.append('Email', changeEmailInput.value);
-            const data = JSON.stringify({
-                Login: changeLoginInput.value,
-                Password: changePasswordInput.value,
-                Email: changeEmailInput.value,
-            });
-            console.log(data);
-            
-            $.ajax({
-                url: '/Profile/ChangeInfo',
-                type: 'POST',
-                contentType: 'application/json',
-                data: data,
-                success: () => {
-                    alert('ok');
-                },
-                error: (e) => {
-                    console.log(e);
-                    alert(e.responseText);
-                }
-            })
-        }
-    }
-})
+// submitButton.addEventListener('click', (item) => {
+//     item.preventDefault();
+//     if(changeEmailInput.value === '' && changePasswordInput.value === '' &&
+//         changeLoginInput.value === '' && !fileInput.files[0]) {
+//         alert('Заполните одно из полей')
+//     } else {
+//         if(!passwordFlag && !emailFlag) {
+//             // fdata.append('Login', changeLoginInput.value);
+//             // fdata.append('Password', changePasswordInput.value);
+//             // fdata.append('Email', changeEmailInput.value);
+//             const data = JSON.stringify({
+//                 Login: changeLoginInput.value,
+//                 Password: changePasswordInput.value,
+//                 Email: changeEmailInput.value,
+//                 Image: fileInput.files[0]
+//             });
+//             console.log(data);
+//            
+//             $.ajax({
+//                 url: '/Profile/ChangeInfo',
+//                 type: 'POST',
+//                 contentType: 'application/json',
+//                 data: data,
+//                 success: () => {
+//                     alert('ok');
+//                 },
+//                 error: (e) => {
+//                     console.log(e);
+//                     alert(e.responseText);
+//                 }
+//             })
+//         }
+//     }
+// })
 

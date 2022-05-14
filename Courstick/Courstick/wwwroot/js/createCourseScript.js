@@ -1,7 +1,6 @@
 const createButton = document.getElementById('add-lesson-button');
 const modal = document.getElementById('modal');
 const createModal = document.getElementById('createLessonModal');
-const testCreateButton = document.getElementById('test_button');
 const createInfoButton = document.getElementById('info_button');
 const lessonsListHtml = document.querySelector('.lessons');
 const lessonInput = document.getElementById('lesson-text-input');
@@ -42,8 +41,7 @@ createInfoButton.addEventListener('click', () => {
         alert('Максимальное количество уроков - 10')
     } else {
         lessonsList.push({
-            type: 'info',
-            text: lessonsList.length
+            Type: 0
         })
         lessonsListHtml.insertAdjacentHTML('beforeend', `<div id=${lessonsList.length - 1} class="lesson-container">\n` +
             '                        <div class="lesson_info_container">\n' +
@@ -89,11 +87,12 @@ function changeLesson() {
     const value = lessonInput.value;
     const id = `lesson-info-${mainNumber}`;
     const info = document.getElementById(id);
-    lessonsList[mainNumber].content = value.toString();
-    info.innerText = lessonsList[mainNumber].content;
+    lessonsList[mainNumber].Text = value.toString();
+    info.innerText = lessonsList[mainNumber].Text;
     console.log(lessonsList);
     lessonInput.value = '';
     createModal.style.display = "none";
+    console.log(JSON.stringify(lessonsList));
     
 }
 
@@ -125,16 +124,17 @@ function createCourse(item) {
         contentType: 'application/json',
         datatype: "json",
         success: (e) => {
-            const lessons = {
-                CourseId: e.data,
-                Lessons: lessonsList
-            };
+            let wrapper = [];
+            lessonsList.forEach((item) => {
+                wrapper.push(JSON.stringify(item));
+            })
+            
             $.ajax({
                 url: '/CourseSettings/CreateLessons',
                 contentType: 'application/json',
                 datatype: "json",
                 type: 'POST',
-                data: JSON.stringify(lessons),
+                data: JSON.stringify({CourseId: e, Lessons: lessonsList}),
                 success: (r) => {
                     alert(r.data)
                 }
@@ -142,7 +142,8 @@ function createCourse(item) {
         },
         error: (e) => {
             console.log(e);
-        }
+        },
+        processData: false
     });
 }
 

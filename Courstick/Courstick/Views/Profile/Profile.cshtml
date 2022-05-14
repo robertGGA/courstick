@@ -55,11 +55,14 @@
                         <input class="search-container-profile" placeholder="Найдите нужный курс" type="search"/>
                     </div>
                     <div class="cards-container">
-                        @Html.Partial("Partials/_ProfileCard", null)
-                        @Html.Partial("Partials/_ProfileCard", null)
-                        @Html.Partial("Partials/_ProfileCard", null)
-                        @Html.Partial("Partials/_ProfileCard", null)
-                        @Html.Partial("Partials/_ProfileCard", null)
+                        @* @Html.Partial("Partials/_ProfileCard", null) *@
+                        @* @Html.Partial("Partials/_ProfileCard", null) *@
+                        @* @Html.Partial("Partials/_ProfileCard", null) *@
+                        @* @Html.Partial("Partials/_ProfileCard", null) *@
+                        @* @Html.Partial("Partials/_ProfileCard", null) *@
+                        <h4>
+                            Вы еще не добавляли никаких курсов
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -67,7 +70,7 @@
     </div>
 </div>
 
-@Html.Partial("Partials/Modals/modalSettings");
+@Html.Partial("Partials/Modals/modalSettings")
 
 @section Scripts
 {

@@ -8,7 +8,6 @@ public class UserInfoModel
     public string Login { get; set; }
     public string Email { get; set; }
     
-    [NotMapped]
     public IFormFile Image { get; set; }
     
     [DataType(DataType.Password)]

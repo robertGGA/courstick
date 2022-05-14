@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Courstick.Dto;
 using Courstick.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using CreateCourseModel = Courstick.Dto.CreateCourseModel;
 
@@ -23,6 +24,7 @@ public class CourseSettingsController : Controller
         userId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
     }
     // GET
+    [Authorize]
     public IActionResult CreateCourse()
     {
         return View();
@@ -73,10 +75,6 @@ public class CourseSettingsController : Controller
     [HttpPost]
     public async Task<IActionResult> CreateCourse([FromBody]CreateCourseModel model)
     {
-        //if (!ModelState.IsValid)
-        //{
-        //    return View();
-        //}
 
         if (model == null)
         {

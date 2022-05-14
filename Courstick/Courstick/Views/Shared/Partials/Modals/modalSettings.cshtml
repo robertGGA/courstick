@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="~/css/uiStyles/modalStyles/settingsStyles.css"/>
 <link rel="stylesheet" href="~/css/uiStyles/modalStyles/defaultModalStyles.css"/>
+@model Courstick.Views.Profile.UserInfoModel;
 
 <div id="modal">
     <div class="modal-content">
@@ -13,9 +14,9 @@
             </button>
         </div>
 
-        <form class="settings-info">
+        <form asp-action="ChangeInfo" class="settings-info" enctype="multipart/form-data">
             <img class="avatar-img" src="#" id="avatar" alt="avatar"/>
-            <input type="file" accept="image/*" class="setting-img-upload" id="fileInput"/>
+            <input asp-for="Image" type="file" accept="image/*" class="setting-img-upload" id="fileInput"/>
             <div class="info-block-settings">
                 <span class="info-block-settings-first-row">
                     <b>Ваша почта</b>
@@ -30,7 +31,7 @@
                 </p>
                 
             
-                <input type="email" id="change-email-input" class="input-settings"/>
+                <input asp-for="Email" type="email" id="change-email-input" class="input-settings"/>
 
                 <span class="info-block-settings-first-row" id="change-password">
                     <b>Ваш пароль</b>
@@ -42,7 +43,7 @@
 
                 <p>********</p>
 
-                <input type="password" id="change-password-input" class="input-settings"/>
+                <input asp-for="Password" type="password" id="change-password-input" class="input-settings"/>
                 <p id="errorPassword">
                     Неправильный формат пароля
                 </p>
@@ -57,7 +58,7 @@
                 </span>
 
                 <p>@ViewBag.login</p>
-                <input type="text" id="change-login-input" class="input-settings"/>
+                <input asp-for="Login" type="text" id="change-login-input" class="input-settings"/>
             </div>
 
             <button type="submit" class="orange-button big-button" id="submitButton">

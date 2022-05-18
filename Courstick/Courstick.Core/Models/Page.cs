@@ -6,6 +6,8 @@ namespace Courstick.Core.Models
     {
         [Key]
         public int PageId { get; set; }
+        
+        public int CourseId { get; set; }
         public int Type { get; set; }
         public string? Text { get; set; }
         public string? Movie { get; set; }

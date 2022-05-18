@@ -159,7 +159,14 @@ public class CourseSettingsController : Controller
             return BadRequest("error");
         }
 
+        var lessonsForDelete =  _appContext.Pages.Where(l => l.CourseId == id).ToList();
+        foreach (var page in lessonsForDelete)
+        {
+             _appContext.Pages.Remove(page);
+        }
+
         _appContext.Courses.Remove(courseForDelete);
+        
         await _appContext.SaveChangesAsync();
 
         return RedirectToAction("YourCourses");

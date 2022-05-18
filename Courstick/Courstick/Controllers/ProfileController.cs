@@ -15,7 +15,6 @@ public class ProfileController : Controller
 {
     private readonly Microsoft.AspNetCore.Identity.UserManager<User> userManager;
     private readonly SignInManager<User> signInManager;
-    private readonly ApplicationContext appContext;
 
 
     public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager, SignInManager<User> _signInManager)

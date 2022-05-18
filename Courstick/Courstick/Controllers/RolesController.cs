@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 
-namespace Courstick.Controllers
 
+namespace Courstick.Controllers
 {
     public class RolesController : Controller
     {

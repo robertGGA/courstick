@@ -8,89 +8,109 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Courstick
 build_property.RootNamespace = Courstick
-build_property.ProjectDir = C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick\
+build_property.ProjectDir = C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick
+build_property.MSBuildProjectDirectory = C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Auth/Authorization.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Auth/Authorization.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBdXRob3JpemF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Auth/Registration.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Auth/Registration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3RyYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/CourseSettings/CreateCourse.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/CourseSettings/CreateCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlU2V0dGluZ3NcQ3JlYXRlQ291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/CourseSettings/YourCourses.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/CourseSettings/EditCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlU2V0dGluZ3NcRWRpdENvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/CourseSettings/YourCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlU2V0dGluZ3NcWW91ckNvdXJzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Course/Course.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Course/Course.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXENvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Course/Lesson.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Course/Lesson.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXExlc3Nvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Home/About.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Home/Index.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Home/Search.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Profile/Profile.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Profile/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Shared/Error.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Roles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Roles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Roles/UserList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZXNcVXNlckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Search/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Shared/Partials/Modals/BuyModal.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Shared/Partials/Modals/BuyModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXE1vZGFsc1xCdXlNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Shared/Partials/Modals/modalSettings.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Shared/Partials/Modals/modalSettings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXE1vZGFsc1xtb2RhbFNldHRpbmdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Shared/Partials/_Card.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Shared/Partials/_Card.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9DYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Shared/Partials/_CourseCardPartial.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Shared/Partials/_CourseCardPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Db3Vyc2VDYXJkUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Shared/Partials/_ProfileCard.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Shared/Partials/_ProfileCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Qcm9maWxlQ2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/_ViewImports.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/_ViewStart.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/artem/Desktop/Repositories/courstick/Courstick/Courstick/Views/Shared/_Layout.cshtml]
+[C:/Users/tagir/OneDrive/Документы/GitHub/courstick/Courstick/Courstick/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bing9q2lm8

@@ -62,10 +62,6 @@ public class AuthController : Controller
     [HttpPost]
     public async Task<IActionResult> Authorization([FromBody]AuthorizationModel model)
     {
-        if (!ModelState.IsValid)
-        {
-        }
-
         var result = await signInManager.PasswordSignInAsync(model.Login, model.Password, model.IsRemember, false);
 
         if (!result.Succeeded)

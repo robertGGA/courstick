@@ -164,3 +164,4 @@ C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick\obj\Release\ne
 C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick\obj\Release\net6.0\ref\Courstick.dll
 C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick\obj\Release\net6.0\Courstick.pdb
 C:\Users\artem\Desktop\Repositories\courstick\Courstick\Courstick\obj\Release\net6.0\Courstick.genruntimeconfig.cache
+C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\bin\Release\net6.0\libman.json

@@ -1,28 +1,21 @@
-
-using Courstick.Dto;
-using Courstick.Infrastructure;
+using Courstick.Core.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Courstick.Controllers;
 
 public class CourseController : Controller
 {
-    private readonly ApplicationContext _appContext;
+    private readonly CourseService _courseService;
 
-    public CourseController(ApplicationContext appContext)
+    public CourseController(CourseService courseService)
     {
-        _appContext = appContext;
+        _courseService = courseService;
     }
+
     [HttpGet]
     public async Task<IActionResult> Course(int id)
     {
-        var currentCourse = await _appContext.Courses.FirstOrDefaultAsync(c => c.CourseId == id);
-        CourseDto courseDto = new CourseDto();
-        courseDto.Description = currentCourse.Description;
-        courseDto.Name = currentCourse.Name;
-        courseDto.SmallDescription = currentCourse.SmallDescription;
-        courseDto.Price = currentCourse.Price;
+        var courseDto = await _courseService.Course(id);
         return View(courseDto);
     }
 }

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Chat.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="LibSassBuilder" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="6.0.4" />
@@ -31,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Chat.cshtml" />
     <None Include="wwwroot\css\AuthStyles.css" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace Courstick.Views.Profile;
 using System.ComponentModel.DataAnnotations;

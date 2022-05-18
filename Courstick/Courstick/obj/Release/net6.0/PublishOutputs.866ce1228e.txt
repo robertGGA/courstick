@@ -1,6 +1,7 @@
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\obj\Release\net6.0\PubTmp\Out\Courstick.exe
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\obj\Release\net6.0\PubTmp\Out\libman.json
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\obj\Release\net6.0\PubTmp\Out\Courstick.dll
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\obj\Release\net6.0\PubTmp\Out\Courstick.runtimeconfig.json
 C:\Users\tagir\OneDrive\Документы\GitHub\courstick\Courstick\Courstick\obj\Release\net6.0\PubTmp\Out\Courstick.pdb

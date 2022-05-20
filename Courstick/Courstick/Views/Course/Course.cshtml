@@ -1,3 +1,4 @@
+@using Courstick.Core.Models
 @model Courstick.Dto.CourseDto
 
 @{
@@ -50,7 +51,7 @@
                             Продолжительность
                         </p>
                         <p class="buy-price">
-                            8 Уроков
+                            @ViewBag.lessons.Count Уроков
                         </p>
                         <p class="buy-desc">
                             Metus turpis sit lorem lacus, in elit tellus lacus.
@@ -104,37 +105,15 @@
                     <h1 style="margin-top: 6px">Что вам предстоит изучить</h1>
 
                     <ul>
-                        <li class="lesson-list-item">
-                            <button class="button-lesson-info">
-                                Урок#1
-                            </button>
-                            Описание урока
-                        </li>
-
-                        <li class="lesson-list-item">
-                            <button class="button-lesson-info">
-                                Урок#2
-                            </button>
-                            Описание урока
-                        </li>
-                        <li class="lesson-list-item">
-                            <button class="button-lesson-info">
-                                Урок#3
-                            </button>
-                            Описание урока
-                        </li>
-                        <li class="lesson-list-item">
-                            <button class="button-lesson-info">
-                                Урок#4
-                            </button>
-                            Описание урока
-                        </li>
-                        <li class="lesson-list-item">
-                            <button class="button-lesson-info">
-                                Урок#5
-                            </button>
-                            Описание урока
-                        </li>
+                        @foreach (Page lesson in ViewBag.lessons)
+                        {
+                            <li class="lesson-list-item">
+                                <button class="button-lesson-info">
+                                    Урок#1
+                                </button>
+                                @lesson.Movie
+                            </li>
+                        }
                     </ul>
                 </div>
 

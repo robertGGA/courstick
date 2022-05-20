@@ -3,7 +3,8 @@ const modal = document.getElementById('modal');
 const createModal = document.getElementById('createLessonModal');
 const createInfoButton = document.getElementById('info_button');
 const lessonsListHtml = document.querySelector('.lessons');
-const lessonInput = document.getElementById('lesson-text-input');
+const lessonInput = document.getElementById('lesson-name-input');
+const lessonContentInput = document.getElementById('lesson-content-input');
 const lessonSubmit = document.getElementById('lessonSubmit');
 let nodes = Array.prototype.slice.call(lessonsListHtml.children);
 const courseName = document.getElementById('courseName');
@@ -45,7 +46,7 @@ createInfoButton.addEventListener('click', () => {
         })
         lessonsListHtml.insertAdjacentHTML('beforeend', `<div id=${lessonsList.length - 1} class="lesson-container">\n` +
             '                        <div class="lesson_info_container">\n' +
-            `                           <p id="lesson-info-${lessonsList.length - 1}">${lessonsList[lessonsList.length - 1].content}</p>\n` +
+            `                           <p id="lesson-info-${lessonsList.length - 1}">${lessonsList[lessonsList.length - 1].Movie}</p>\n` +
             '                        </div>\n' +
             '\n' +
             '                        <div>\n' +
@@ -83,14 +84,17 @@ document.addEventListener('click', (item) => {
 })
 
 function changeLesson() {
-    console.log('click');
     const value = lessonInput.value;
+    const content = lessonContentInput.value;
     const id = `lesson-info-${mainNumber}`;
     const info = document.getElementById(id);
-    lessonsList[mainNumber].Text = value.toString();
-    info.innerText = lessonsList[mainNumber].Text;
+    lessonsList[mainNumber].Movie = value.toString();
+    lessonsList[mainNumber].Text = content.toString();
+    
+    info.innerText = lessonsList[mainNumber].Movie;
     console.log(lessonsList);
     lessonInput.value = '';
+    lessonContentInput.value = '';
     createModal.style.display = "none";
     console.log(JSON.stringify(lessonsList));
     

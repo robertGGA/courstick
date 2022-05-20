@@ -8,7 +8,7 @@ public class CourseDto
     public int CourseId { get; set; }
     public List<PageDto> Lessons { get; set; }
     
-    public AuthorDto Author { get; set; }
+    public AuthorDto? Author { get; set; }
     
     public string Name { get; set; }
         

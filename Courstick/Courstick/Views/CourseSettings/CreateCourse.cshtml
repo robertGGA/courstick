@@ -2,11 +2,7 @@
 @{
     ViewData["Title"] = "Create course";
 }
-@*
-    1)Добавление в лист поля модели
-    2)Будет ли сохраняться картинка 
-    3)
-*@
+
 <div class="main_block_colored">
     <div class="main_container">
         <div class="add-course-first-block">
@@ -89,7 +85,17 @@
             Введите данные
         </h2>
         <div class="type-lesson_choose">
-            <input id="lesson-text-input" type="text"/>
+            <label>
+                Название
+                <input id="lesson-name-input" type="text"/>
+            </label>
+            
+            <label>
+                Содержимое
+                <input id="lesson-content-input" type="text"/>
+            </label>
+            
+           
             <input id="lessonSubmit" type="submit" class="orange-button big-button">
         </div>
     </div>

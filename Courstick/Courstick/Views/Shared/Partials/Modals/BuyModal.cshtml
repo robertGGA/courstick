@@ -17,9 +17,9 @@
             @Model.Price ₽
         </h2>
         
-        <button class="orange-button big-button">
+        <a asp-area="" asp-route-id="@Model.CourseId" asp-controller="Lessons" asp-action="Lessons" class="orange-button big-button">
             Купить
-        </button>
+        </a>
     </div>
 </div>
 

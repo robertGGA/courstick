@@ -17,13 +17,14 @@ public class ProfileController : Controller
     private readonly SignInManager<User> signInManager;
 
 
-    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager, SignInManager<User> _signInManager)
+    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager,
+        SignInManager<User> _signInManager)
     {
         userManager = _userManager;
         signInManager = _signInManager;
     }
-    
-    
+
+
     [Authorize]
     public async Task<IActionResult> Profile()
     {
@@ -34,14 +35,15 @@ public class ProfileController : Controller
         ViewBag.Image = await GetImage();
         return View();
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> ChangeInfo(UserInfoDto model)
     {
-        if (model.Image == null && model.Email == null && model.Password == null && model.Login == null) 
+        if (model.Image == null && model.Email == null && model.Password == null && model.Login == null)
         {
             return BadRequest("Форма пуста");
         }
+
         var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
         String login = model.Login == null ? user.UserName : model.Login;
         String email = model.Email == null ? user.Email : model.Email;
@@ -55,8 +57,8 @@ public class ProfileController : Controller
         {
             var bytes = await GetBytes(model.Image);
             user.Avatar = bytes;
-
         }
+
         user.UserName = login;
         user.Email = email;
         await userManager.UpdateAsync(user);
@@ -84,8 +86,8 @@ public class ProfileController : Controller
             return "";
         }
     }
-    
-     
+
+
     [HttpPost]
     public async Task<IActionResult> LogOut()
     {
@@ -95,7 +97,6 @@ public class ProfileController : Controller
     }
 
     [HttpGet]
-
     public async Task<IActionResult> GetUserCourses()
     {
         var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));

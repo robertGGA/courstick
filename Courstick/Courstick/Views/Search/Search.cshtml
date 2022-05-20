@@ -42,11 +42,11 @@
                     <input placeholder="Поиск" id="course-searcher" class="input-search" type="search"/>
                 </div>
                 
-                <div class="courses-list">
-                @foreach(CourseInfoDto course in Model)
-                {
-                    @Html.Partial("Partials/_Card", course)
-                }
+                <div id="cards-list" class="courses-list">
+                @* @foreach(CourseInfoDto course in Model) *@
+                @* { *@
+                @*     @Html.Partial("Partials/_Card", course) *@
+                @* } *@
                 </div>
             </div>
             <button class="load-more-button">

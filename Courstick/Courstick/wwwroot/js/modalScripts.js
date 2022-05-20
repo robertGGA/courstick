@@ -5,7 +5,6 @@ const closeButton = document.getElementById('modal_close_button');
 const body = document.querySelector('body');
 
 
-
 function closeModal() {
     modal.style.display = "none";
     body.style.overflow = 'scroll';
@@ -32,8 +31,8 @@ window.addEventListener('keydown', (e) => {
     keyPress(e);
 })
 
-function keyPress (e) {
-    if(e.key === "Escape") {
+function keyPress(e) {
+    if (e.key === "Escape") {
         closeModal();
     }
 }
@@ -41,7 +40,7 @@ function keyPress (e) {
 try {
     openModalSettingsButton.addEventListener('click', () => {
         openModal();
-    });  
+    });
 } catch (e) {
     console.log('button doesnt exist');
 }

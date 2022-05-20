@@ -68,6 +68,7 @@ function removeItem(item) {
     console.log(item);
     item.remove();
 }
+
 let mainNumber;
 
 document.addEventListener('click', (item) => {
@@ -90,14 +91,14 @@ function changeLesson() {
     const info = document.getElementById(id);
     lessonsList[mainNumber].Movie = value.toString();
     lessonsList[mainNumber].Text = content.toString();
-    
+
     info.innerText = lessonsList[mainNumber].Movie;
     console.log(lessonsList);
     lessonInput.value = '';
     lessonContentInput.value = '';
     createModal.style.display = "none";
     console.log(JSON.stringify(lessonsList));
-    
+
 }
 
 createButton.addEventListener('click', () => {
@@ -112,7 +113,7 @@ window.onclick = function (event) {
 
 function createCourse(item) {
     item.preventDefault();
-    
+
     const data = {
         Name: courseName.value,
         Description: bigDesc.value,
@@ -132,7 +133,7 @@ function createCourse(item) {
             lessonsList.forEach((item) => {
                 wrapper.push(JSON.stringify(item));
             })
-            
+
             $.ajax({
                 url: '/CourseSettings/CreateLessons',
                 contentType: 'application/json',

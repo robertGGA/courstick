@@ -23,6 +23,7 @@ public class AuthController : Controller
         {
             return Redirect("/Profile/profile");
         }
+
         return View();
     }
 
@@ -32,14 +33,15 @@ public class AuthController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Registration([FromBody]RegisterModel model)
+    public async Task<IActionResult> Registration([FromBody] RegisterModel model)
     {
-        if (await userManager.FindByEmailAsync(model.Email) == null && await userManager.FindByEmailAsync(model.Login) == null)
+        if (await userManager.FindByEmailAsync(model.Email) == null &&
+            await userManager.FindByEmailAsync(model.Login) == null)
         {
-            var user = new User { Email = model.Email, UserName = model.Login};
+            var user = new User {Email = model.Email, UserName = model.Login};
             var result = await userManager.CreateAsync(user, model.Password);
             await userManager.AddToRoleAsync(user, "defaultUser");
-            
+
             if (!result.Succeeded)
             {
                 foreach (var error in result.Errors)
@@ -47,7 +49,7 @@ public class AuthController : Controller
 
                 return BadRequest("Что-то пошло не так");
             }
-            
+
             await userManager.UpdateAsync(user);
 
             await signInManager.SignInAsync(user, isPersistent: false);
@@ -60,17 +62,18 @@ public class AuthController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Authorization([FromBody]AuthorizationModel model)
+    public async Task<IActionResult> Authorization([FromBody] AuthorizationModel model)
     {
         var result = await signInManager.PasswordSignInAsync(model.Login, model.Password, model.IsRemember, false);
 
         if (!result.Succeeded)
         {
-            return BadRequest(new { Message = "Неправильный логин или пароль" });
+            return BadRequest(new {Message = "Неправильный логин или пароль"});
         }
+
         Console.WriteLine(result);
-        
-        
+
+
         HttpContext.Session.SetString("login", model.Login);
         return Redirect("/Profile/profile");
     }

@@ -1,23 +1,29 @@
 const search = document.getElementById('course-searcher');
 const filters = document.getElementsByClassName('tab');
 
+
 let active;
 const divyArray = Array.from(filters);
 
 window.addEventListener('load', () => {
-    getCourses().then((r) => {
-       console.log(r);
+    getAllCourses().then((r) => {
+        r.forEach((i) => {
+            console.log(i);
+            $('#cards-list').append(createCard(i));
+            console.log('created');
+        })
+        // $('#cards-list').html(r);
     }).catch((e) => {
         console.log(e);
     })
 })
 
-async function getCourses() {
+async function getAllCourses() {
     return $.ajax({
         url: '/Search/GetCourses',
+        contentType: 'application/json',
         type: 'GET',
         success: (r) => {
-            console.log('works');
             return r;
         }
     })
@@ -32,7 +38,7 @@ divyArray.forEach((item) => {
             active = item;
             item.style.border = '1px solid #F75E05'
             //item.classList.add('active_tab');
-            
+
             getCourses(item.innerHTML.trim());
 
         } else {
@@ -45,6 +51,49 @@ divyArray.forEach((item) => {
     })
 });
 
-search.addEventListener('change', async (e) => {
-    setTimeout(await getCourses(e.target.value), 2000);
+
+function getCourses(name) {
+    return $.ajax({
+        url: '/Search/GetCourseByName?name=' + name,
+        contentType: 'application/json',
+        type: 'GET',
+        success: (r) => {
+            return r;
+        }
+    })
+}
+
+const createCard = (r) => {
+    return `<a href="/Course/Course/${r.id}" class="card-search">
+    <img class="card-image" src="~/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg"/>
+    <div class="card-content">
+        <div class="tag tag-color-cyan">
+            Сварка)
+        </div>
+
+        <p class="course-name">
+            ${r.name}
+        </p>
+
+        <div class="card-price-container">
+            <p class="price">${r.price} ₽</p>
+        
+                <div class="card-author-block default_font_settings">
+                            ${r.author ?? 'Автор'}
+                </div>
+        </div>
+    </div>
+</a>
+`
+}
+
+search.addEventListener('keyup', async (e) => {
+    getCourses(e.target.value).then((r) => {
+        $("#cards-list").empty();
+        r.forEach((i) => {
+            console.log(i);
+            $('#cards-list').append(createCard(i));
+            console.log('created');
+        })
+    })
 });

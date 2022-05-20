@@ -1,5 +1,5 @@
 const swiper = new Swiper('.swiper', {
-    spaceBetween: 100,  
+    spaceBetween: 100,
     autoplay: {
         delay: 5000,
     },

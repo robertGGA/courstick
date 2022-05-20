@@ -54,10 +54,10 @@ let errorRepeatFlag = false;
 // })
 
 function loginSubmit() {
-    const data =  JSON.stringify({
-            'login': login.value,
-            'password': password.value,
-            'isRemember': false
+    const data = JSON.stringify({
+        'login': login.value,
+        'password': password.value,
+        'isRemember': false
     });
     return data;
 }
@@ -79,19 +79,19 @@ function removeErrors() {
 login.addEventListener('click', () => {
     removeErrors();
 })
-    
+
 loginSubmitButton.addEventListener('click', (e) => {
     e.preventDefault();
-        $.ajax({
-            url: '/Auth/Authorization',
-            type: 'POST',
-            contentType: 'application/json',
-            data: loginSubmit(),
-            success: (res) => {
-                removeErrors();
-                window.location.href = '/Profile/profile';
-            },
-            error:  (err) => setErrors(err)
-        })
+    $.ajax({
+        url: '/Auth/Authorization',
+        type: 'POST',
+        contentType: 'application/json',
+        data: loginSubmit(),
+        success: (res) => {
+            removeErrors();
+            window.location.href = '/Profile/profile';
+        },
+        error: (err) => setErrors(err)
+    })
 })
 

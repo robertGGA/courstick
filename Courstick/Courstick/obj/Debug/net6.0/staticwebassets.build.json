@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ogffr0IX2Q/4fPb38QC6GoTOa8qX+FLyw9PSk650PqM=",
+  "Hash": "59WChOgtxmnlg/7bbTxyEy2GREDpIeAZWADuXe7SXqc=",
   "Source": "Courstick",
   "BasePath": "_content/Courstick",
   "Mode": "Default",
@@ -5200,6 +5200,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/homePageScript.js"
+    },
+    {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/js/lessonScript.js",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "js/lessonScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/lessonScript.js"
     },
     {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/js/modalScripts.js",

@@ -31,4 +31,11 @@ public class CourseRepository : ICourseRepository
     public async Task SaveChangesAsync() => await _applicationContext.SaveChangesAsync();
     public  IEnumerable<Course> GetAll() => _applicationContext.Courses.ToList();
     public async Task<Course?> GetCourseByIdAsync(int courseId) => await _applicationContext.Courses.FirstOrDefaultAsync(c => c.CourseId == courseId);
+
+    public async Task<List<Course?>> GetCourseByNameAsync(string name)
+    {
+        var val =  _applicationContext.Courses.Where(c => c.Name == name).ToList();
+        return val;
+    }
+        
 }

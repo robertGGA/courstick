@@ -9,7 +9,7 @@ public class LessonsController : Controller
 {
     private readonly ApplicationContext _appContext;
 
-    LessonsController(ApplicationContext appContext)
+    public LessonsController(ApplicationContext appContext)
     {
         _appContext = appContext;
     }
@@ -22,5 +22,16 @@ public class LessonsController : Controller
             .FirstAsync(c => c.CourseId == id);
         ViewBag.lessons = thatCourse.Page;
         return View();
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetLesson(int id)
+    {
+        var lesson = await _appContext.Pages.FirstOrDefaultAsync(l => l.PageId == id);
+        if (lesson == null)
+        {
+            return BadRequest();
+        }
+        return Json(lesson);
     }
 }

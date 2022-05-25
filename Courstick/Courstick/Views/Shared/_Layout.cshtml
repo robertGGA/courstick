@@ -35,16 +35,68 @@
                         Обратная связь
                     </a>
                 </nav>
+                
+                
             </div>
+            <div id="burger-menu">
+                <button class="burger-menu__open-button">
+                    <img class="burger-menu__img" src="~/assets/burgermenu.svg" alt="burger menu"/>
+                </button>
+                
+                <nav class="burger-menu__nav">
+                
+                    <div class="logo">COURSTICK
+                        <img src="~/assets/logo.svg" class="logo-img"/>
+                    </div>
+                    <div class="burger-menu__links-container">
+                        <a class="burger-menu__links" asp-area="" asp-controller="Home" asp-action="About">
+                            О нас
+                        </a>
+                        
+                        
+                        <a class="burger-menu__links" asp-area="" asp-controller="Search" asp-action="Search">
+                            Курсы
+                        </a>
+                        
+                        
+                        <a class="burger-menu__links" href="/">
+                            Обратная связь
+                        </a>
+                        
+                         @if (Context.Session.GetString("login") != null)
+                                    {
+                                        <a class="burger-menu__links" asp-area="" asp-controller="Profile" asp-action="Profile">
+                                            Профиль
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="burger-menu__links" asp-area="" asp-controller="Auth" asp-action="Registration">
+                                                Регистрация
+                                            </a>
+                                            <a class="burger-menu__links" asp-area="" asp-controller="Auth" asp-action="Authorization">
+                                                Войти
+                                            </a>
+                                    }
+                         
+                    </div>
+                    
+                </nav>
+                
+                <div class="burger-menu__overlay">
+                    
+                </div>
+            </div>
+            
             @if (Context.Session.GetString("login") != null)
             {
-                <a class="big-button orange-button default_font_settings" asp-area="" asp-controller="Profile" asp-action="Profile">
+                <a class="full_header big-button orange-button default_font_settings" asp-area="" asp-controller="Profile" asp-action="Profile">
                     Профиль
                 </a>
             }
             else
             {
-                <div class="half_of_header default_font_settings">
+                <div class="full_header half_of_header default_font_settings">
                     <a class="big-button orange-button default_font_settings" asp-area="" asp-controller="Auth" asp-action="Registration">
                         Регистрация
                     </a>

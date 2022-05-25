@@ -96,3 +96,38 @@ li:first-child {
     border: none;
     font-size: 16px;
 }
+
+@media screen and (max-width: 700px) {
+    .profile-label {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .user-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .user-info {
+        display: none;
+    }
+    
+    .profile-settings {
+        margin-top: 15px;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+    
+    .profile-course {
+        align-items: center;
+    }
+    
+    .courses-first-row {
+        margin-top: 15px;
+        flex-direction: column;
+    }
+    
+    .cards-container {
+        margin-top: 10px;
+    }
+}

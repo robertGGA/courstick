@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "59WChOgtxmnlg/7bbTxyEy2GREDpIeAZWADuXe7SXqc=",
+  "Hash": "V6dB/eDe2b83V+C+ix8wMpGRXC+X3HPGs85VeSvqi80=",
   "Source": "Courstick",
   "BasePath": "_content/Courstick",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/1141e3214a1146cfa23e94fb3049e271_ce_640x399x0x255_cropped_666x444.jpeg"
+    },
+    {
+      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/assets/burgermenu.svg",
+      "SourceId": "Courstick",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
+      "BasePath": "_content/Courstick",
+      "RelativePath": "assets/burgermenu.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/burgermenu.svg"
     },
     {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/assets/illustration (1).svg",
@@ -4911,23 +4928,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/homepageStyles.css"
-    },
-    {
-      "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/lessons.css",
-      "SourceId": "Courstick",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/",
-      "BasePath": "_content/Courstick",
-      "RelativePath": "css/lessons.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/css/lessons.css"
     },
     {
       "Identity": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/wwwroot/css/lessonsStyles.css",

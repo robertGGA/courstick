@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/Courstick.csproj": {}
+    "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj": {}
   },
   "projects": {
-    "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/Courstick.Core.csproj": {
+    "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick.Core\\Courstick.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/Courstick.Core.csproj",
+        "projectUniqueName": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick.Core\\Courstick.Core.csproj",
         "projectName": "Courstick.Core",
-        "projectPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/Courstick.Core.csproj",
-        "packagesPath": "/Users/gadelshinrr/.nuget/packages/",
-        "outputPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/obj/",
+        "projectPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick.Core\\Courstick.Core.csproj",
+        "packagesPath": "C:\\Users\\tagir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/gadelshinrr/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tagir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,34 +68,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/Courstick.csproj": {
+    "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/Courstick.csproj",
+        "projectUniqueName": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj",
         "projectName": "Courstick",
-        "projectPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/Courstick.csproj",
-        "packagesPath": "/Users/gadelshinrr/.nuget/packages/",
-        "outputPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick/obj/",
+        "projectPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\Courstick.csproj",
+        "packagesPath": "C:\\Users\\tagir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/gadelshinrr/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tagir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/gadelshinrr/Desktop/courstick/Courstick/Infrastructure/Courstick.Infrastructure.csproj": {
-                "projectPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Infrastructure/Courstick.Infrastructure.csproj"
+              "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Infrastructure\\Courstick.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Infrastructure\\Courstick.Infrastructure.csproj"
               }
             }
           }
@@ -175,34 +179,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/gadelshinrr/Desktop/courstick/Courstick/Infrastructure/Courstick.Infrastructure.csproj": {
+    "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Infrastructure\\Courstick.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gadelshinrr/Desktop/courstick/Courstick/Infrastructure/Courstick.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Infrastructure\\Courstick.Infrastructure.csproj",
         "projectName": "Courstick.Infrastructure",
-        "projectPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Infrastructure/Courstick.Infrastructure.csproj",
-        "packagesPath": "/Users/gadelshinrr/.nuget/packages/",
-        "outputPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Infrastructure/obj/",
+        "projectPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Infrastructure\\Courstick.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\tagir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/gadelshinrr/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tagir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/Courstick.Core.csproj": {
-                "projectPath": "/Users/gadelshinrr/Desktop/courstick/Courstick/Courstick.Core/Courstick.Core.csproj"
+              "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick.Core\\Courstick.Core.csproj": {
+                "projectPath": "C:\\Users\\tagir\\OneDrive\\Документы\\GitHub\\courstick\\Courstick\\Courstick.Core\\Courstick.Core.csproj"
               }
             }
           }
@@ -247,7 +253,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

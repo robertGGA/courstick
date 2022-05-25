@@ -51,7 +51,7 @@
                             Продолжительность
                         </p>
                         <p class="buy-price">
-                            @ViewBag.lessons.Count Уроков
+                            @Model!.Lessons!.Count Уроков
                         </p>
                         <p class="buy-desc">
                             Metus turpis sit lorem lacus, in elit tellus lacus.
@@ -105,7 +105,7 @@
                     <h1 style="margin-top: 6px">Что вам предстоит изучить</h1>
 
                     <ul>
-                        @foreach (Page lesson in ViewBag.lessons)
+                        @foreach (var lesson in Model?.Lessons)
                         {
                             <li class="lesson-list-item">
                                 <button class="button-lesson-info">

@@ -15,7 +15,7 @@ public class CourseService
         _courseRepository = courseRepository;
     }
 
-    
+
     public List<CourseInfoDto> GetCourseList()
     {
         var courses = _courseRepository.GetAll();
@@ -41,9 +41,30 @@ public class CourseService
         return arrayList;
     }
 
+    public async Task<CourseDto?> GetCourseDtoByIdAsync(int id)
+    {
+        var thatCourse = await _courseRepository.GetCourseByIdAsync(id);
+        if (thatCourse is null)
+            return null;
+        CourseDto courseDto = new CourseDto();
+
+        courseDto.Lessons = thatCourse.Page?.Select(x => new PageDto()
+        {
+            Movie = x.Movie,
+            Image = x.Image,
+            Text = x.Text,
+            Type = x.Type
+        }).ToList()??new List<PageDto>();
+        courseDto.Name = thatCourse.Name;
+        courseDto.Price = thatCourse.Price;
+        courseDto.Description = thatCourse.Description;
+        courseDto.CourseId = id;
+        return courseDto;
+    }
+
     public async Task<List<CourseInfoDto>> GetCourseListByName(string name)
     {
-        var courses =  await _courseRepository.GetCourseByNameAsync(name);
+        var courses = await _courseRepository.GetCourseByNameAsync(name);
         var arrayList = new List<CourseInfoDto>();
         foreach (var course in courses)
         {
@@ -76,6 +97,4 @@ public class CourseService
         courseDto.Price = currentCourse.Price;
         return courseDto;
     }
-    
-    
 }

@@ -131,3 +131,39 @@
     color: rgba(255, 63, 58, 1);
     background: none;
 }
+
+@media screen and (max-width: 700px) {
+    .about-course-block {
+        flex-direction: column;
+    }
+    
+    .about-course {
+        margin: 0 auto;
+        align-items: center;
+    }
+    
+    .buy-block {
+        margin: 0 auto;
+    }
+    
+    .author-avatar {
+        margin: 0 auto;
+    }
+    
+    .author-block-info {
+        margin: 0 auto;
+        margin-top: 15px;
+        max-width: 495px;
+    }
+
+    .description_wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    
+    .about-course ul {
+        padding: 0;
+    }
+}
+    

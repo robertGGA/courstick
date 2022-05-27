@@ -116,3 +116,41 @@
 .comment-text {
     margin-top: 3px;
 }
+
+@media screen and (max-width: 700px) {
+    .lessons-container {
+        flex-direction: column-reverse;
+    }
+    
+    .lesson-list {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+        padding: 5px 10px;
+        align-items: center;
+    }
+    
+    .lesson-list li {
+        margin-right: 25px;
+    }
+    
+    .lesson-list-item {
+        border: 1px solid black;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    .lesson-list li:first-child {
+        margin-right: 0;
+        border: none;
+    }
+    
+    .lesson-course-name {
+        margin-right: 100px !important;
+    }
+    
+    .lesson-container {
+        margin-top: 40px;
+    }
+}

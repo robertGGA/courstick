@@ -23,6 +23,12 @@
     object-fit: cover;
 }
 
+p {
+    max-height: 130px;
+    overflow-y: scroll;
+    text-align: left;
+}
+
 .your-course-card-info-wrapper {
     padding: 15px;
     display: flex;
@@ -39,4 +45,23 @@
 .delete-btn{
     color: #ff0000;
     border: none;
+}
+
+@media screen and (max-width: 700px) {
+    .settings-course-list {
+        overflow-y: scroll;
+    }
+    
+    .your-course-card-info-wrapper {
+        height: 450px;
+    }
+    
+    .button-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    p {
+        display: none;
+    }
 }

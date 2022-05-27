@@ -345,7 +345,7 @@ footer {
 .burger-menu__nav {
   padding: 50px 50px 50px 15px;
   position: fixed;
-  z-index: 20;
+  z-index: 1001;
   display: flex;
   flex-flow: column;
   height: 100%;

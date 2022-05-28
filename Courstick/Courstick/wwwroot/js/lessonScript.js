@@ -15,13 +15,19 @@ lesson_buttons.forEach((item, index) => {
     })
 })
 
+let urlRegex = /(https?:\/\/[^\s]+)/g;
+
 function getLesson(id, index) {
     $.ajax({
         url: '/Lessons/GetLesson?id=' + id,
         type: 'GET',
         contentType: 'application/json',
         success: (res) => {
-            content_container.innerText = res.text;
+            let text = res.text;
+            text = text.replace(urlRegex, '');
+            if(res.text.match(urlRegex)) {
+                $('#content').append(urlify(res.text));
+            }
             lesson_title.innerText = `Урок #${index}`
         },
         error: () => {
@@ -38,7 +44,10 @@ const getComments = () => {
         type: 'GET',
         contentType: 'application/json',
         success: (res) => {
-            console.log(res);
+            $('.comments-container').empty();
+            res.forEach(item => {
+                setComment(item);
+            })
         },
         error: () => {
             console.log('error');
@@ -50,7 +59,7 @@ commentButton.addEventListener('click', (e) => {
     e.preventDefault();
     
     const data = {
-        Text: textInput.value.trim(),
+        Text: escapeHtmlEntities(textInput.value.trim()),
         CourseId: query
     }
     
@@ -65,7 +74,7 @@ const createComment = (data) => {
         contentType: 'application/json',
         data: JSON.stringify(data),
         success: (res) => {
-           console.log(res);
+            getComments();
         },
         error: (err) => {
             console.log(err);
@@ -77,3 +86,41 @@ function getUrlId(qs) {
     qs = qs.split('/');
     return qs[qs.length - 1];
 }
+
+function setComment(item) {
+    const img = `data:image/png;base64,${item.user.avatar}`
+    $('.comments-container').append('<div class="comment">\n' +
+        `                                <img src="${img}"class="comment_avatar">\n` +
+        '                                <div class="comment-content">\n' +
+        '                                    <p class="name">\n' +
+        `                                        ${item.user.normalizedUserName}\n` +
+        '                                    </p>\n' +
+        '        \n' +
+        `                                    <p class="comment-text"> ${item.text}` +
+        '                                    </p>\n' +
+        '                                </div>\n' +
+        '                            </div>')
+}
+
+function escapeHtmlEntities (str) {
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/>/g, '&gt;')
+        .replace(/</g, '&lt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+}
+
+function urlify(text) {
+    if(text.includes('youtu.be')) {
+        text =  text.replace('youtu.be', 'www.youtube.com/embed');
+    } else {
+        text = text.replace("watch?v=", "embed/");
+    }
+    console.log(text);
+    return text.replace(urlRegex, function(url) {
+        console.log(url);
+        return '<iframe class="video"  src="'+ url + '" target="_parent" > </iframe>'
+    })
+}
+

@@ -108,9 +108,9 @@ registrationBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if(!errorEmailFlag && !errorRepeatFlag && !errorPassFlag && !errorLogin) {
         const data = {
-            Email: email.value,
-            Password: password.value,
-            Login: login.value
+            Email: escapeHtmlEntities(email.value),
+            Password: escapeHtmlEntities(password.value),
+            Login: escapeHtmlEntities(login.value)
         }
         $.ajax({
             url: '/Auth/Registration',
@@ -128,6 +128,16 @@ registrationBtn.addEventListener('click', (e) => {
         alert('Заполните все поля');
     }
 })
+
+function escapeHtmlEntities (str) {
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/>/g, '&gt;')
+        .replace(/</g, '&lt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+}
+
 
 
     // $.ajax({

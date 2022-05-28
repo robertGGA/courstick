@@ -13,6 +13,7 @@ const bigDesc = document.getElementById('bigDesc');
 const image = document.getElementById('img');
 const price = document.getElementById('price');
 
+
 const addCourseButton = document.getElementById('add_course');
 
 const lessonsList = [];
@@ -89,8 +90,8 @@ function changeLesson() {
     const content = lessonContentInput.value;
     const id = `lesson-info-${mainNumber}`;
     const info = document.getElementById(id);
-    lessonsList[mainNumber].Movie = value.toString();
-    lessonsList[mainNumber].Text = content.toString();
+    lessonsList[mainNumber].Movie = escapeHtmlEntities(value.toString());
+    lessonsList[mainNumber].Text = escapeHtmlEntities(content.toString());
 
     info.innerText = lessonsList[mainNumber].Movie;
     console.log(lessonsList);
@@ -115,10 +116,10 @@ function createCourse(item) {
     item.preventDefault();
 
     const data = {
-        Name: courseName.value,
-        Description: bigDesc.value,
-        SmallDescription: smallDesc.value,
-        Price: price.value,
+        Name: escapeHtmlEntities(courseName.value),
+        Description: escapeHtmlEntities(bigDesc.value),
+        SmallDescription: escapeHtmlEntities(smallDesc.value),
+        Price: escapeHtmlEntities(price.value),
         Type: 1
     };
     console.log(data);
@@ -152,6 +153,17 @@ function createCourse(item) {
     });
 }
 
+
 addCourseButton.addEventListener('click', (item) => createCourse(item));
+
+function escapeHtmlEntities (str) {
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/>/g, '&gt;')
+        .replace(/</g, '&lt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+}
+
 
 

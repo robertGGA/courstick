@@ -55,8 +55,8 @@ let errorRepeatFlag = false;
 
 function loginSubmit() {
     const data = JSON.stringify({
-        'login': login.value,
-        'password': password.value,
+        'login': escapeHtmlEntities(login.value),
+        'password': escapeHtmlEntities(password.value),
         'isRemember': false
     });
     return data;
@@ -94,4 +94,13 @@ loginSubmitButton.addEventListener('click', (e) => {
         error: (err) => setErrors(err)
     })
 })
+
+function escapeHtmlEntities (str) {
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/>/g, '&gt;')
+        .replace(/</g, '&lt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
+}
 

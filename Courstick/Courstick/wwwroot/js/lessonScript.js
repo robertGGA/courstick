@@ -38,7 +38,10 @@ const getComments = () => {
         type: 'GET',
         contentType: 'application/json',
         success: (res) => {
-            console.log(res);
+            $('.comments-container').empty();
+            res.forEach(item => {
+                setComment(item);
+            })
         },
         error: () => {
             console.log('error');
@@ -65,7 +68,7 @@ const createComment = (data) => {
         contentType: 'application/json',
         data: JSON.stringify(data),
         success: (res) => {
-           console.log(res);
+            getComments();
         },
         error: (err) => {
             console.log(err);
@@ -76,4 +79,19 @@ const createComment = (data) => {
 function getUrlId(qs) {
     qs = qs.split('/');
     return qs[qs.length - 1];
+}
+
+function setComment(item) {
+    const img = `data:image/png;base64,${item.user.avatar}`
+    $('.comments-container').append('<div class="comment">\n' +
+        `                                <img src="${img}"class="comment_avatar">\n` +
+        '                                <div class="comment-content">\n' +
+        '                                    <p class="name">\n' +
+        `                                        ${item.user.normalizedUserName}\n` +
+        '                                    </p>\n' +
+        '        \n' +
+        `                                    <p class="comment-text"> ${item.text}` +
+        '                                    </p>\n' +
+        '                                </div>\n' +
+        '                            </div>')
 }

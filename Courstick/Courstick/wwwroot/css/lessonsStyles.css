@@ -38,6 +38,7 @@
 
 .lesson-list-item {
     border: none;
+    text-align: left;
     background: none;
     display: flex;
     justify-content: left;
@@ -117,6 +118,12 @@
     margin-top: 3px;
 }
 
+.video {
+    margin: 35px 0;
+    width: 100%;
+    height: 400px;
+}
+
 @media screen and (max-width: 700px) {
     .lessons-container {
         flex-direction: column-reverse;
@@ -133,6 +140,10 @@
     
     .lesson-list li {
         margin-right: 25px;
+    }
+    
+    .video {
+        height: 200px;
     }
     
     .lesson-list-item {

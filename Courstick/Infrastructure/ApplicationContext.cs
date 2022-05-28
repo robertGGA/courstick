@@ -23,6 +23,7 @@ namespace Courstick.Infrastructure
         {
             modelBuilder.Entity<Course>().HasMany(c => c.Author).WithMany(c => c.AuthorOf).UsingEntity("AuthorOfCourse");
             modelBuilder.Entity<Course>().HasMany(c => c.Users).WithMany(c => c.Courses);
+            
             base.OnModelCreating(modelBuilder);
         }
     }

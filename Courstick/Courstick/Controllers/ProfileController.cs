@@ -33,9 +33,19 @@ public class ProfileController : Controller
         ViewBag.login = user.UserName;
         ViewBag.email = user.Email;
         ViewBag.Image = await GetImage();
+        ViewBag.Balance = user.Balance;
         return View();
     }
 
+    [HttpPost]
+    public async Task<IActionResult> TopUpBalance(int replenishmentAmount)
+    {
+        var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
+        user.Balance += replenishmentAmount;
+        await userManager.UpdateAsync(user);
+        return RedirectToAction("Profile");
+    }
+        
     [HttpPost]
     public async Task<IActionResult> ChangeInfo(UserInfoDto model)
     {

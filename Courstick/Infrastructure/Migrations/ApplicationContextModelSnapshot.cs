@@ -37,21 +37,6 @@ namespace Courstick.Infrastructure.Migrations
                     b.ToTable("AuthorOfCourse");
                 });
 
-            modelBuilder.Entity("CourseUser", b =>
-                {
-                    b.Property<int>("CoursesCourseId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UsersId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("CoursesCourseId", "UsersId");
-
-                    b.HasIndex("UsersId");
-
-                    b.ToTable("CourseUser");
-                });
-
             modelBuilder.Entity("Courstick.Core.Models.Comment", b =>
                 {
                     b.Property<int>("CommentId")
@@ -282,8 +267,8 @@ namespace Courstick.Infrastructure.Migrations
                     b.Property<byte[]>("Avatar")
                         .HasColumnType("bytea");
 
-                    b.Property<int>("Balance")
-                        .HasColumnType("integer");
+                    b.Property<double>("Balance")
+                        .HasColumnType("double precision");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -465,6 +450,21 @@ namespace Courstick.Infrastructure.Migrations
                     b.ToTable("SubscriptionUser");
                 });
 
+            modelBuilder.Entity("UserAndCourse", b =>
+                {
+                    b.Property<int>("CoursesCourseId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UsersId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("CoursesCourseId", "UsersId");
+
+                    b.HasIndex("UsersId");
+
+                    b.ToTable("UserAndCourse");
+                });
+
             modelBuilder.Entity("AuthorOfCourse", b =>
                 {
                     b.HasOne("Courstick.Core.Models.User", null)
@@ -476,21 +476,6 @@ namespace Courstick.Infrastructure.Migrations
                     b.HasOne("Courstick.Core.Models.Course", null)
                         .WithMany()
                         .HasForeignKey("AuthorOfCourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CourseUser", b =>
-                {
-                    b.HasOne("Courstick.Core.Models.Course", null)
-                        .WithMany()
-                        .HasForeignKey("CoursesCourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Courstick.Core.Models.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -597,6 +582,21 @@ namespace Courstick.Infrastructure.Migrations
                     b.HasOne("Courstick.Core.Models.Subscription", null)
                         .WithMany()
                         .HasForeignKey("SubscriptionsSubscriptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Courstick.Core.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("UserAndCourse", b =>
+                {
+                    b.HasOne("Courstick.Core.Models.Course", null)
+                        .WithMany()
+                        .HasForeignKey("CoursesCourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

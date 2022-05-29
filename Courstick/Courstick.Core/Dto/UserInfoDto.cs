@@ -1,8 +1,8 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using Courstick.Core.Models;
 using Microsoft.AspNetCore.Http;
 
-namespace Courstick.Views.Profile;
-using System.ComponentModel.DataAnnotations;
+namespace Courstick.Core.Dto;
 
 public class UserInfoDto
 {
@@ -13,4 +13,6 @@ public class UserInfoDto
     
     [DataType(DataType.Password)]
     public string Password { get; set; }
+    
+    public List<Course> Courses { get; set; }
 }

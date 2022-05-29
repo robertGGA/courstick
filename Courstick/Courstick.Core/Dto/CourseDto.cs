@@ -1,5 +1,4 @@
 ﻿using Courstick.Core.Models;
-using Courstick.Views.Profile;
 
 namespace Courstick.Dto;
 

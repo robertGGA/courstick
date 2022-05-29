@@ -1,48 +1,57 @@
-using System.Drawing;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Courstick.Core.Models;
 using Courstick.Infrastructure;
-using Courstick.Views.Profile;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
-using System.Drawing;
+using System.Security.Claims;
+using Courstick.Core.Dto;
 
 
 namespace Courstick.Controllers;
 
 public class ProfileController : Controller
 {
-    private readonly Microsoft.AspNetCore.Identity.UserManager<User> userManager;
-    private readonly SignInManager<User> signInManager;
+    private readonly Microsoft.AspNetCore.Identity.UserManager<User> _userManager;
+    private readonly SignInManager<User> _signInManager;
+    private readonly ApplicationContext _appContext;
+    private readonly string userId;
 
-
-    public ProfileController(Microsoft.AspNetCore.Identity.UserManager<User> _userManager,
-        SignInManager<User> _signInManager)
+    public ProfileController(IHttpContextAccessor httpContextAccessor, Microsoft.AspNetCore.Identity.UserManager<User> _userManager,
+        SignInManager<User> _signInManager, ApplicationContext appContext)
     {
-        userManager = _userManager;
-        signInManager = _signInManager;
+        this._userManager = _userManager;
+        _appContext = appContext;
+        this._signInManager = _signInManager;
+        userId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
     }
 
 
     [Authorize]
     public async Task<IActionResult> Profile()
     {
-        var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
+        var user = await _userManager.FindByIdAsync(userId);
+        var courses = _appContext.Courses.Where(i => i.Users.Any(x => x.Id == user.Id));
         Console.WriteLine(user);
         ViewBag.login = user.UserName;
         ViewBag.email = user.Email;
         ViewBag.Image = await GetImage();
         ViewBag.Balance = user.Balance;
-        return View();
+
+        var model = new UserInfoDto()
+        {
+            Courses = courses.AsEnumerable().ToList()
+        };
+
+        return View(model);
     }
 
     [HttpPost]
     public async Task<IActionResult> TopUpBalance(int replenishmentAmount)
     {
-        var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
+        var user = await _userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
         user.Balance += replenishmentAmount;
-        await userManager.UpdateAsync(user);
+        await _userManager.UpdateAsync(user);
         return RedirectToAction("Profile");
     }
         
@@ -54,7 +63,7 @@ public class ProfileController : Controller
             return BadRequest("Форма пуста");
         }
 
-        var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
+        var user = await _userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
         String login = model.Login == null ? user.UserName : model.Login;
         String email = model.Email == null ? user.Email : model.Email;
 
@@ -71,7 +80,7 @@ public class ProfileController : Controller
 
         user.UserName = login;
         user.Email = email;
-        await userManager.UpdateAsync(user);
+        await _userManager.UpdateAsync(user);
         return RedirectToAction("Profile");
     }
 
@@ -84,7 +93,7 @@ public class ProfileController : Controller
 
     public async Task<String> GetImage()
     {
-        var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
+        var user = await _userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
         if (user.Avatar != null)
         {
             var base64 = Convert.ToBase64String(user.Avatar);
@@ -101,7 +110,7 @@ public class ProfileController : Controller
     [HttpPost]
     public async Task<IActionResult> LogOut()
     {
-        await signInManager.SignOutAsync();
+        await _signInManager.SignOutAsync();
         HttpContext.Session.Remove("login");
         return Redirect("/");
     }
@@ -109,7 +118,7 @@ public class ProfileController : Controller
     [HttpGet]
     public async Task<IActionResult> GetUserCourses()
     {
-        var user = await userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
+        var user = await _userManager.FindByIdAsync(IdentityExtensions.GetUserId(User.Identity));
         return Json("");
     }
 }

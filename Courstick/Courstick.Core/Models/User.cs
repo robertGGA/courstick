@@ -13,10 +13,10 @@ namespace Courstick.Core.Models
         
         public List<Course> AuthorOf { get; set; }
         
-        public List<Course>? Courses { get; set; }
+        public List<Course> Courses { get; set; }
         
         public List<Subscription> Subscriptions { get; set; }
         
-        public int Balance { get; set; }
+        public double Balance { get; set; }
     }
 }

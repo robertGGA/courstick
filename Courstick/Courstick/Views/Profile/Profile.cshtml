@@ -1,3 +1,5 @@
+@model Courstick.Core.Dto.UserInfoDto
+@using Courstick.Core.Models
 @{
     ViewData["Title"] = "Профиль";
 }
@@ -58,18 +60,14 @@
 
                 <div class="profile-course">
                     <div class="courses-first-row">
-                        <h2>Ваши курсы</h2>
+                        <h2>Курсы, которые вы добавили</h2>
                         <input class="search-container-profile" placeholder="Найдите нужный курс" type="search"/>
                     </div>
                     <div class="cards-container">
-                        @* @Html.Partial("Partials/_ProfileCard", null) *@
-                        @* @Html.Partial("Partials/_ProfileCard", null) *@
-                        @* @Html.Partial("Partials/_ProfileCard", null) *@
-                        @* @Html.Partial("Partials/_ProfileCard", null) *@
-                        @* @Html.Partial("Partials/_ProfileCard", null) *@
-                        <h4>
-                            Вы еще не добавляли никаких курсов
-                        </h4>
+                        @foreach (Course course in Model.Courses)
+                        {
+                            @Html.Partial("Partials/_ProfileCard", course)
+                        }
                     </div>
                 </div>
             </div>

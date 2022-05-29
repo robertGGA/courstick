@@ -16,10 +16,10 @@
         <h2>
             @Model.Price ₽
         </h2>
-        
-        <a asp-area="" asp-route-id="@Model.CourseId" asp-controller="Lessons" asp-action="Lessons" class="orange-button big-button">
-            Купить
-        </a>
+        <form method="post" asp-action="BuyCourse">
+            <input type="hidden" asp-for="@Model.CourseId"/>
+            <input type="submit" class="orange-button big-button" value="Купить">
+        </form>
     </div>
 </div>
 

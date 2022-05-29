@@ -22,7 +22,7 @@ namespace Courstick.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Course>().HasMany(c => c.Author).WithMany(c => c.AuthorOf).UsingEntity("AuthorOfCourse");
-            modelBuilder.Entity<Course>().HasMany(c => c.Users).WithMany(c => c.Courses);
+            modelBuilder.Entity<Course>().HasMany(c => c.Users).WithMany(c => c.Courses).UsingEntity("UserAndCourse");
             
             base.OnModelCreating(modelBuilder);
         }

@@ -83,8 +83,44 @@ public class CourseService
                 continue;
             }
         }
-
         return arrayList;
+    }
+
+    public List<CourseInfoDto> ToCourseDto(List<Course> courses)
+    {
+        var arrayList = new List<CourseInfoDto>();
+        foreach (var course in courses)
+        {
+            CourseInfoDto item = new CourseInfoDto();
+            try
+            {
+                item.Name = course.Name;
+                item.Description = course.Description;
+                item.SmallDescription = course.SmallDescription;
+                item.Price = course.Price;
+                item.Id = course.CourseId;
+                arrayList.Add(item);
+            }
+            catch (Exception e)
+            {
+                continue;
+            }
+        }
+        return arrayList;
+    }
+
+    public async Task<List<CourseInfoDto>> SearchListByName(string name)
+    {
+        var courses = await _courseRepository.GetClosestCourseByNameAsync(name);
+        try
+        {
+            return ToCourseDto(courses);
+        }
+        catch (Exception e)
+        {
+            return new List<CourseInfoDto>();
+        }
+
     }
 
     public async Task<CourseDto> Course(int id)
@@ -97,4 +133,33 @@ public class CourseService
         courseDto.Price = currentCourse.Price;
         return courseDto;
     }
+
+    public async Task<List<CourseInfoDto>> GetAscendingCourses()
+    {
+        var courses = await _courseRepository.GetAscendingCourses();
+        try
+        {
+            return ToCourseDto(courses);
+        }
+        catch (Exception e)
+        {
+            return new List<CourseInfoDto>();
+        }
+        
+    }
+    
+    public async Task<List<CourseInfoDto>> GetDescendingCourses()
+    {
+        var courses = await _courseRepository.GetDescendingCourses();
+        try
+        {
+            return ToCourseDto(courses);
+        }
+        catch (Exception e)
+        {
+            return new List<CourseInfoDto>();
+        }
+        
+    }
+    
 }

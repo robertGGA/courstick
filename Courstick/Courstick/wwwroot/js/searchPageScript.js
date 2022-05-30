@@ -1,5 +1,8 @@
 const search = document.getElementById('course-searcher');
 const filters = document.getElementsByClassName('tab');
+const buttonHigherPrice = document.getElementById('higherPriceButton');
+const buttonLowestPrice = document.getElementById('lowerPriceButton');
+
 
 
 let active;
@@ -97,3 +100,47 @@ search.addEventListener('keyup', async (e) => {
         })
     })
 });
+
+buttonHigherPrice.addEventListener('click', () => {
+     $.ajax({
+        url: '/Search/GetHighestPriceCourses',
+        contentType: 'application/json',
+        type: 'GET',
+        success: (r) => {
+                $("#cards-list").empty();
+                r.forEach((i) => {
+                    console.log(i);
+                    $('#cards-list').append(createCard(i));
+                    console.log('created');
+                })
+            
+            
+        },
+         error: (e) => {
+            console.log(e);
+         }
+    })
+})
+
+buttonLowestPrice.addEventListener('click', () => {
+    $.ajax({
+        url: '/Search/GetLowestPriceCourses',
+        contentType: 'application/json',
+        type: 'GET',
+        success: (r) => {
+            $("#cards-list").empty();
+            r.forEach((i) => {
+                console.log(i);
+                $('#cards-list').append(createCard(i));
+                console.log('created');
+            })
+
+
+        },
+        error: (e) => {
+            console.log(e);
+        }
+    })
+})
+
+

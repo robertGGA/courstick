@@ -37,6 +37,7 @@ header {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 }
 
 .header_wrapper {
@@ -397,6 +398,18 @@ footer {
   opacity: 0.7;
 }
 
+@media screen and (max-width: 1200px) {
+  .slider-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .content-first-block {
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 700px) {
   
   .header_wrapper {
@@ -417,6 +430,19 @@ footer {
   
   .full_header {
     display: none;
+  }
+  
+  .people-img {
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .first-block-underline {
+    display: block;
+  }
+  
+  .courses-title {
+    flex-direction: column;
   }
 }
 

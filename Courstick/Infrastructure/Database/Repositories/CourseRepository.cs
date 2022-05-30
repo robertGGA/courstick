@@ -37,5 +37,22 @@ public class CourseRepository : ICourseRepository
         var val =  _applicationContext.Courses.Where(c => c.Name == name).ToList();
         return val;
     }
-        
+
+    public async Task<List<Course?>> GetClosestCourseByNameAsync(string name)
+    {
+       var value = _applicationContext.Courses.Where(s => s.Name!.Contains(name)).ToList();
+       return value;
+    }
+
+    public async Task<List<Course?>> GetAscendingCourses()
+    {
+        var value = _applicationContext.Courses.OrderBy(c => c.Price).ToList();
+        return value;
+    }
+
+    public async Task<List<Course?>> GetDescendingCourses()
+    {
+        var value = _applicationContext.Courses.OrderByDescending(c => c.Price).ToList();
+        return value;
+    }
 }

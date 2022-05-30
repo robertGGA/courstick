@@ -33,3 +33,10 @@
 .swiper-button-prev:after {
     content: none !important;
 }
+
+@media screen and (max-width: 1200px) {
+    .swiper {
+        max-width: 70%;
+        width: 100%;
+    }
+}

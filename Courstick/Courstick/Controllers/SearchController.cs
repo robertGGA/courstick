@@ -1,12 +1,5 @@
-using System.Collections;
-using System.Collections.Immutable;
-using System.Data.Entity;
-using System.Text.Json;
 using Courstick.Core.Services;
-using Courstick.Dto;
-using Courstick.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Courstick.Controllers;
 
@@ -28,7 +21,7 @@ public class SearchController : Controller
     [HttpGet]
     public async Task<IActionResult> GetCourseByName(string name)
     {
-        var courses = await _courseService.GetCourseListByName(name);
+        var courses = await _courseService.SearchListByName(name);
         return Json(courses);
     }
 
@@ -40,9 +33,18 @@ public class SearchController : Controller
         return Json(courses);
     }
 
+
     [HttpGet]
-    public async Task<IActionResult> GetCoursesByName()
+    public async Task<IActionResult> GetLowestPriceCourses()
     {
-        return Json("");
+        var courses = await _courseService.GetDescendingCourses();
+        return Json(courses);
+    }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetHighestPriceCourses()
+    {
+        var courses = await _courseService.GetAscendingCourses();
+        return Json(courses);
     }
 }

@@ -79,11 +79,21 @@ public class CourseController : Controller
             user.Courses = new List<Course>();
         }
         
-        user.Courses.Add(course);
-        user.Balance -= course.Price;
+        if (user.Balance < course.Price)
+        {
+            return RedirectToAction("LowBalance", "Course");
+        }
         
+        user.Balance -= course.Price;
+        user.Courses.Add(course);
+
         await _userManager.UpdateAsync(user);
         
         return RedirectToAction("Lessons", "Lessons", new {id = course.CourseId});
+    }
+    
+    public IActionResult LowBalance()
+    {
+        return View();
     }
 }

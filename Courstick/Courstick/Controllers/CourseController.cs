@@ -6,6 +6,7 @@ using Courstick.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Courstick.Core.Interfaces;
 
 namespace Courstick.Controllers;
 
@@ -15,20 +16,45 @@ public class CourseController : Controller
     private readonly string userId;
     private readonly UserManager<User> _userManager;
     private readonly ApplicationContext _appContext;
+    private readonly ICourseRepository _courseRepository;
 
     public CourseController(IHttpContextAccessor httpContextAccessor, UserManager<User> userManager, CourseService courseService,
-        ApplicationContext appContext)
+        ApplicationContext appContext, ICourseRepository courseRepository)
     {
         _courseService = courseService;
         _userManager = userManager;
         _appContext = appContext;
         userId = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+        _courseRepository = courseRepository;
     }
 
     [HttpGet]
     public async Task<IActionResult> Course(int id)
     {
-        var courseDto = await _courseService.GetCourseDtoByIdAsync(id);
+        var user = await _userManager.FindByIdAsync(userId);
+        var boughtCourses = _appContext.Courses.Where(i => i.Users.Any(x => x.Id == user.Id)).AsEnumerable().ToList();
+        
+        var thatCourse = await _courseRepository.GetCourseByIdAsync(id);
+        if (thatCourse is null)
+            return null;
+        CourseDto courseDto = new CourseDto();
+
+        courseDto.Lessons = thatCourse.Page?.Select(x => new PageDto()
+        {
+            Movie = x.Movie,
+            Image = x.Image,
+            Text = x.Text,
+            Type = x.Type
+        }).ToList()??new List<PageDto>();
+        courseDto.Name = thatCourse.Name;
+        courseDto.Price = thatCourse.Price;
+        courseDto.Description = thatCourse.Description;
+        courseDto.CourseId = id;
+        if (boughtCourses.Contains(thatCourse))
+        {
+            courseDto.IsBought = true;
+        }
+        
         if (courseDto is null)
         {
             return Redirect("/Search/Search");

@@ -61,9 +61,14 @@
                         <p class="buy-title">
                             Цена
                         </p>
-                        <p class="buy-price">
-                            @Model?.Price ₽
-                        </p>
+                        @if (Model.IsBought)
+                        {
+                            <p class="buy-price">Курс куплен</p>
+                        }
+                        else
+                        {
+                            <p class="buy-price">@Model?.Price ₽</p>
+                        }
                         <p class="buy-desc">
                             Metus turpis sit lorem lacus, in elit tellus lacus.
                         </p>
@@ -79,9 +84,16 @@
                         </p>
                     </div>
 
-                    <button id="open-modal-button" class="orange-button big-button">
-                        Присоединиться к курсу
-                    </button>
+                    @if (Model.IsBought)
+                    {
+                        <a asp-controller="Lessons" asp-action="Lessons" asp-route-id="@Model.CourseId" class="text-center orange-button big-button">
+                            Перейти к обучению
+                        </a>
+                    }
+                    else
+                    {
+                        <button id="open-modal-button" class="orange-button big-button">Присоединиться к курсу</button>
+                    }
                 </div>
             </div>
 
